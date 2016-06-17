@@ -1,68 +1,71 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m4 -mthumb -g2 -Wall -O0 -c -DSTM32F429ZI -DSTM32F429xx -D_FPU_USED -DSTM32F429_439xx -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F429_LIBRARIES\usb_cdc_device -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS -I..\..\..\..\..\..\..\CoIDE\workspace -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F429_LIBRARIES -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\app -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx -I..\..\..\..\..\..\..\CoIDE\workspace\24-STM32F429_USB_VCP\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver">
-      <target file="stm32f4xx_exti.o" lastModified="1555d73b245">
+   <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m4 -mthumb -g2 -Wall -O0 -c -DSTM32F429ZI -DSTM32F429xx -D_FPU_USED -DSTM32F429_439xx -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F429_LIBRARIES\usb_cdc_device -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F429_LIBRARIES -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\app -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST">
+      <target file="stm32f4xx_exti.o" lastModified="1555dc8e026">
          <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c" lastModified="1555d63f4b2"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="1555d73ada9">
+      <target file="stm32f4xx_gpio.o" lastModified="1555dc8dc04">
          <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c" lastModified="1555d6346b7"/>
       </target>
-      <target file="usbd_core.o" lastModified="1555d73a970">
+      <target file="usbd_core.o" lastModified="1555dc8d701">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.c" lastModified="15559bef8ce"/>
       </target>
-      <target file="usbd_desc.o" lastModified="1555d73ac29">
-         <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.c" lastModified="15559bef8d1"/>
+      <target file="usbd_desc.o" lastModified="1555dc8dacb">
+         <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.c" lastModified="1555dc47e40"/>
       </target>
-      <target file="usbd_cdc_core.o" lastModified="1555d73b1b1">
+      <target file="usbd_cdc_core.o" lastModified="1555dc8df8f">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_core.c" lastModified="15559bef8ca"/>
       </target>
-      <target file="usbd_cdc_vcp.o" lastModified="1555d73ae4c">
+      <target file="usbd_cdc_vcp.o" lastModified="1555dc8dc8d">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_vcp.c" lastModified="15559bef8cb"/>
       </target>
-      <target file="usbd_ioreq.o" lastModified="1555d73b3e5">
+      <target file="usbd_ioreq.o" lastModified="1555dc8e273">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.c" lastModified="15559bef8d3"/>
       </target>
-      <target file="tm_stm32f4_usb_vcp.o" lastModified="1555d73ace2">
+      <target file="tm_stm32f4_gpio.o" lastModified="1555dc8e1dd">
+         <source file="..\..\..\00-STM32F429_LIBRARIES\tm_stm32f4_gpio.c" lastModified="15559bef6ee"/>
+      </target>
+      <target file="tm_stm32f4_usb_vcp.o" lastModified="1555dc8db5d">
          <source file="..\..\..\00-STM32F429_LIBRARIES\tm_stm32f4_usb_vcp.c" lastModified="15559bef845"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="1555d73aee4">
+      <target file="system_stm32f4xx.o" lastModified="1555dc8dd0d">
          <source file="..\..\..\app\system_stm32f4xx.c" lastModified="15559bef9df"/>
       </target>
-      <target file="usb_bsp.o" lastModified="1555d73af91">
+      <target file="usb_bsp.o" lastModified="1555dc8dd98">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_bsp.c" lastModified="15559bef8bd"/>
       </target>
-      <target file="misc.o" lastModified="1555d73b2da">
+      <target file="misc.o" lastModified="1555dc8e0bb">
          <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\misc.c" lastModified="1555d641a11"/>
       </target>
-      <target file="usbd_req.o" lastModified="1555d73b056">
+      <target file="usbd_req.o" lastModified="1555dc8de3b">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_req.c" lastModified="15559bef8d5"/>
       </target>
-      <target file="usb_dcd.o" lastModified="1555d73b368">
+      <target file="tm_stm32f4_disco.o" lastModified="1555dc8d65e">
+         <source file="..\..\..\00-STM32F429_LIBRARIES\tm_stm32f4_disco.c" lastModified="15559bef6bd"/>
+      </target>
+      <target file="usb_dcd.o" lastModified="1555dc8e14c">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd.c" lastModified="15559bef8c3"/>
       </target>
-      <target file="usb_dcd_int.o" lastModified="1555d73b12a">
+      <target file="usb_dcd_int.o" lastModified="1555dc8dee1">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd_int.c" lastModified="15559bef8c5"/>
       </target>
-      <target file="stm32f4xx_it.o" lastModified="1555d73ab63">
+      <target file="stm32f4xx_it.o" lastModified="1555dc8da04">
          <source file="..\..\..\app\stm32f4xx_it.c" lastModified="15559bef9dd"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="1555d73aaf3">
+      <target file="stm32f4xx_rcc.o" lastModified="1555dc8d97a">
          <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c" lastModified="1555d6464f1"/>
       </target>
-      <target file="startup_stm32f429xx.o" lastModified="1555d73aba1">
+      <target file="startup_stm32f429xx.o" lastModified="1555dc8da4c">
          <source file="..\..\..\startup_stm32f429xx.S" lastModified="15559bef9e2"/>
       </target>
-      <target file="usb_core.o" lastModified="1555d73a71b">
+      <target file="usb_core.o" lastModified="1555dc8d486">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_core.c" lastModified="15559bef8c0"/>
       </target>
-      <target file="usbd_usr.o" lastModified="1555d73a7ce">
+      <target file="usbd_usr.o" lastModified="1555dc8d5c8">
          <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_usr.c" lastModified="15559bef8d7"/>
       </target>
-      <target file="main.o" lastModified="1555d73aa1b">
-         <source file="..\..\..\app\main.c" lastModified="1555d739e04"/>
-      </target>
-      <target file="stm32f4xx_usart.o" lastModified="1555d73a8b7">
-         <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_usart.c" lastModified="1555c50dcd8"/>
+      <target file="main.o" lastModified="1555dc8d8b0">
+         <source file="..\..\..\app\main.c" lastModified="1555dc11c7a"/>
       </target>
    </processor>
 </history>

@@ -33,7 +33,6 @@ volatile uint32_t ticker, downTicker;
 
 
 int main(void) {
-    uint8_t c;
     /* System Init */
     SystemInit();
     /* Initialize USB VCP */
