@@ -56,7 +56,7 @@
 #define HAVE_STRING_H 1
 
 /* Define to 1 if the system has the type `struct timespec'. */
-// #define HAVE_STRUCT_TIMESPEC 1
+#define HAVE_STRUCT_TIMESPEC 1
 
 /* syslog() function available */
 /* #undef HAVE_SYSLOG_FUNC */

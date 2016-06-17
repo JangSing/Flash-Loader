@@ -741,8 +741,8 @@ configure:12479: checking for syslog.h
 configure:12479: result: no
 configure:12489: checking for syslog
 configure:12489: gcc -o conftest.exe -g -O2   conftest.c  >&5
-C:\Users\User\AppData\Local\Temp\cc6VEdHm.o: In function `main':
-c:\College_Stuff\Degree_yr3_sem1\Agile\libusb-1.0.20/conftest.c:63: undefined reference to `syslog'
+C:\Users\User\AppData\Local\Temp\ccgOvFjS.o: In function `main':
+c:\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\libusb-1.0.20/conftest.c:63: undefined reference to `syslog'
 collect2.exe: error: ld returned 1 exit status
 configure:12489: $? = 1
 configure: failed program was:
@@ -819,8 +819,8 @@ configure:12579: gcc -c -g -O2 -Wno-pointer-sign  conftest.c >&5
 configure:12579: $? = 0
 configure:12588: checking for sigaction
 configure:12588: gcc -o conftest.exe -g -O2   conftest.c  >&5
-C:\Users\User\AppData\Local\Temp\ccetuWYD.o: In function `main':
-c:\College_Stuff\Degree_yr3_sem1\Agile\libusb-1.0.20/conftest.c:64: undefined reference to `sigaction'
+C:\Users\User\AppData\Local\Temp\ccAxwZtM.o: In function `main':
+c:\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\libusb-1.0.20/conftest.c:64: undefined reference to `sigaction'
 collect2.exe: error: ld returned 1 exit status
 configure:12588: $? = 1
 configure: failed program was:
@@ -1051,7 +1051,7 @@ lt_cv_to_tool_file_cmd=func_convert_file_msys_to_w32
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/libusb-1.0.20/missing aclocal-1.15'
+ACLOCAL='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/Flash_Loader/libusb-1.0.20/missing aclocal-1.15'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -1062,9 +1062,9 @@ AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
 AM_DEFAULT_VERBOSITY='0'
 AM_V='$(V)'
 AR='ar'
-AUTOCONF='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/libusb-1.0.20/missing autoconf'
-AUTOHEADER='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/libusb-1.0.20/missing autoheader'
-AUTOMAKE='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/libusb-1.0.20/missing automake-1.15'
+AUTOCONF='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/Flash_Loader/libusb-1.0.20/missing autoconf'
+AUTOHEADER='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/Flash_Loader/libusb-1.0.20/missing autoheader'
+AUTOMAKE='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/Flash_Loader/libusb-1.0.20/missing automake-1.15'
 AWK='gawk'
 BUILD_EXAMPLES_FALSE=''
 BUILD_EXAMPLES_TRUE='#'
@@ -1108,7 +1108,7 @@ LTLIBOBJS=''
 MAINT='#'
 MAINTAINER_MODE_FALSE=''
 MAINTAINER_MODE_TRUE='#'
-MAKEINFO='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/libusb-1.0.20/missing makeinfo'
+MAKEINFO='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/Flash_Loader/libusb-1.0.20/missing makeinfo'
 MANIFEST_TOOL=':'
 MKDIR_P='/bin/mkdir -p'
 NM='/c/MinGW/bin/nm'
@@ -1188,7 +1188,7 @@ host_vendor='pc'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/libusb-1.0.20/install-sh'
+install_sh='${SHELL} /C/College_Stuff/Degree_yr3_sem1/Agile/Flash_Loader/libusb-1.0.20/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
