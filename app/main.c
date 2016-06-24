@@ -13,9 +13,7 @@
  * #define USE_USB_OTG_HS
  *
  * Before compile in Keil, select your target, I made some settings for different targets
- */
-#include "tm_stm32f4_usb_vcp.h"
-#include "tm_stm32f4_disco.h"
+*/
 #include "stm32f4xx_conf.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
@@ -29,24 +27,19 @@
 #include "defines.h"
 #include <string.h>
 
-volatile uint32_t ticker, downTicker;
-
+USB_OTG_CORE_HANDLE	USB_OTG_dev;
 
 int main(void) {
-    /* System Init */
     SystemInit();
-    /* Initialize USB VCP */
-    TM_USB_VCP_Init();
-
+	USBD_Init(	&USB_OTG_dev,
+				USB_OTG_HS_CORE_ID,
+				&USR_desc,
+				&USBD_CDC_cb,
+				&USR_cb);
+	char byte;
     while (1) {
-    	if (500 == ticker){
-    		GPIOG->BSRRH = GPIO_Pin_14;
-    	}
-    	else if (1000 == ticker)
-    	{
-    		ticker = 0;
-    		GPIOG->BSRRL = GPIO_Pin_14;
-    	}
+
+
     }
 }
 

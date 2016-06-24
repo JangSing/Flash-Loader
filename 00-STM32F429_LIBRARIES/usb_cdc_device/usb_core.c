@@ -228,7 +228,7 @@ USB_OTG_STS USB_OTG_SelectCore(USB_OTG_CORE_HANDLE *pdev,
   
   /* at startup the core is in FS mode */
   pdev->cfg.speed            = USB_OTG_SPEED_FULL;
-  pdev->cfg.mps              = USB_OTG_FS_MAX_PACKET_SIZE ;    
+  pdev->cfg.mps              = USB_OTG_FS_MAX_PACKET_SIZE ;
   
   /* initialize device cfg following its address */
   if (coreID == USB_OTG_FS_CORE_ID)
