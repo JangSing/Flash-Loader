@@ -29,6 +29,9 @@
 
 USB_OTG_CORE_HANDLE	USB_OTG_dev;
 
+uint8_t buffChar[]={'h','e','l','l','o'};
+uint8_t c;
+
 int main(void) {
     SystemInit();
 	USBD_Init(	&USB_OTG_dev,
@@ -36,10 +39,16 @@ int main(void) {
 				&USR_desc,
 				&USBD_CDC_cb,
 				&USR_cb);
-	char byte;
+
     while (1) {
 
-
+    	if(VCP_get_char(&c)){
+    		if(c=='`')
+    			VCP_send_buffer(buffChar, 6);
+    		else {
+				VCP_put_char(c);
+			}
+    	}
     }
 }
 

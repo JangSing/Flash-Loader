@@ -219,6 +219,7 @@ static uint16_t VCP_DataRx(uint8_t* Buf, uint32_t Len) {
 	return USBD_OK;
 }
 
+
 int VCP_get_char(uint8_t *buf) {
 	if (APP_tx_ptr_head == APP_tx_ptr_tail)
 		return 0;
