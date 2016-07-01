@@ -29,23 +29,21 @@ int main(void) {
 	while(1){
     	if(VCP_get_char(&c)){
     		switch(c){
-    			case 'U':
-    				FLASH_Unlock();
-    				VCP_send_buffer(buffChar, 6);break;
-    			case 'P':
-    				while(status==FLASH_BUSY);
-    				status=FLASH_ProgramHalfWord(ADDRESS_SECTOR_18, DATA_PROGRAM);
-    				while(status==FLASH_BUSY);break;
-
-    			case 'R':
-    				while(status==FLASH_BUSY);
-    				status=FLASH_EraseSector(FLASH_SECTOR_18, FLASH_VOLTAGE_RANGE_3);
-    				while(status==FLASH_BUSY);break;
-
-    			case 'L':
-    				FLASH_Lock();break;
-    			default :
-    				VCP_put_char(c);break;
+    		case 'v':
+    			VCP_send_buffer(buffChar, 6);break;
+    		case 'p':
+    			FLASH_Unlock();
+    			while(status==FLASH_BUSY);
+    			status=FLASH_ProgramHalfWord(ADDRESS_SECTOR_18, DATA_PROGRAM);
+    			while(status==FLASH_BUSY);
+    			FLASH_Lock();break;
+    		case 'e':
+    			FLASH_Unlock();
+    			while(status==FLASH_BUSY);
+    			status=FLASH_EraseSector(FLASH_CR_SNB_4|FLASH_CR_SNB_2|FLASH_CR_SNB_1, FLASH_VOLTAGE_RANGE_3);
+    			while(status==FLASH_BUSY);
+    			FLASH_Lock();break;
+    		default :break;
     		}
     	}
 	}
