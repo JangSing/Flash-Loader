@@ -34,7 +34,7 @@
 #include "stm32f4xx_exti.h"
 #include "misc.h"
 
-#include "defines.h"
+#define USE_USB_OTG_HS
 
 #ifndef USB_VCP_NVIC_PRIORITY
 #define USB_VCP_NVIC_PRIORITY			0x01

@@ -31,7 +31,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx.h"
-#include "defines.h"
+
+#define USE_USB_OTG_HS
 
 //#include <stdio.h>
 

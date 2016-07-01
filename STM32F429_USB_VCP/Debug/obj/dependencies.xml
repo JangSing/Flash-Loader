@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F429_LIBRARIES\usb_cdc_device /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F429_LIBRARIES\HAL_LIBRARIES\Inc /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F429_LIBRARIES\HAL_LIBRARIES /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F429_LIBRARIES /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\app /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc /I..\..\..\..\..\..\..\..\..\College_Stuff\Degree_yr3_sem1\Agile\Flash_Loader\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST">
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_bsp.h" lastModified="1557e70cded">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\HAL_LIBRARIES\Inc\stm32f4xx_hal_def.h" lastModified="154964dc7f0">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\HAL_LIBRARIES\Inc\Legacy\stm32_hal_legacy.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_usr.h" lastModified="1558d9e8f1d">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_bsp.c" lastModified="1558fe1c007">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_bsp.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_conf.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\misc.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_conf.h" lastModified="155a2671d11">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_usr.c" lastModified="1558d9fbeb3">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_usr.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\misc.c" lastModified="1557e70d0ad">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\misc.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.h" lastModified="1557e70ce86">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_def.h"/>
+      </source>
+      <source file="..\..\..\app\stm32f4xx_conf.h" lastModified="155a2706c59">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\misc.h"/>
+      </source>
+      <source file="..\..\..\app\system_stm32f4xx.c" lastModified="1557e70d20e">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.c" lastModified="1557e70ce80">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_req.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_conf.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_regs.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_regs.h" lastModified="1557e70ce3d">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h" lastModified="1557e70d04d">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.h" lastModified="1557e70ce73">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_def.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cm4.h" lastModified="1557e70d321">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cmInstr.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cmFunc.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cmSimd.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_req.h" lastModified="1557e70ceac">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_def.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\app\stm32f4xx_it.h" lastModified="1557e70d207">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.h" lastModified="1557e70ce96">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_def.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.c" lastModified="1557e70ce6c">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_req.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd_int.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_bsp.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_req.c" lastModified="1557e70cea5">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_req.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd.h" lastModified="1557e70ce10">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_core.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\misc.h" lastModified="1557e70cf78">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\startup_stm32f429xx.s" lastModified="1557e70dae0">
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.c" lastModified="1557e70ce8e">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.h"/>
+      </source>
+      <source file="..\..\..\app\stm32f4xx_it.c" lastModified="1558d9c4166">
+         <include file="..\..\..\app\stm32f4xx_it.h"/>
+         <include file="..\..\..\app\main.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_def.h" lastModified="1557e70ce78">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd.c" lastModified="1557e70ce09">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_bsp.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_core.h" lastModified="1557e70ce49">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_ioreq.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h" lastModified="1557e70d2be">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cm4.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_core.c" lastModified="1557e70ce44">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_req.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_vcp.h" lastModified="155395e2454">
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h" lastModified="1557e70d09f">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_conf.h" lastModified="1557e70ce5f">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h" lastModified="1557e70cfe8">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h" lastModified="1557e70d014">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_vcp.c" lastModified="1558d891c6e">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_vcp.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cmFunc.h" lastModified="1557e70db09">
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_usart.c" lastModified="155a258c832">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd_int.h" lastModified="1557e70ce2e">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h" lastModified="1557740bf0c">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd_int.c" lastModified="1557e70ce28">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd_int.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\HAL_LIBRARIES\Inc\stm32f4xx_hal_flash_ex.h" lastModified="154964dbac1">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\HAL_LIBRARIES\Inc\stm32f4xx_hal_def.h"/>
+      </source>
+      <source file="..\..\..\app\main.h" lastModified="1557e70d1f0">
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c" lastModified="1557e70d0b5">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c" lastModified="1557e70d0bb">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_flash.c" lastModified="155a26b94d9">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\app\main.c" lastModified="155a4836885">
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h"/>
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\HAL_LIBRARIES\Inc\stm32f4xx_hal_flash_ex.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_usr.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_desc.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usbd_cdc_vcp.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_dcd_int.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c" lastModified="1557e70d0c6">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\app\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h" lastModified="1557e70cedb">
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_core.h" lastModified="1557e70ce02">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_conf.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_regs.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_defines.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_core.c" lastModified="1557e774f7f">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_core.h"/>
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_bsp.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\HAL_LIBRARIES\Inc\Legacy\stm32_hal_legacy.h" lastModified="155a266a752">
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cmInstr.h" lastModified="1557e70db11">
+      </source>
+      <source file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_defines.h" lastModified="1557e70ce35">
+         <include file="..\..\..\00-STM32F429_LIBRARIES\usb_cdc_device\usb_conf.h"/>
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Include\core_cmSimd.h" lastModified="1557e70db18">
+      </source>
+      <source file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h" lastModified="1557740bf30">
+         <include file="..\..\..\00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h"/>
+      </source>
+   </includePath>
+</dependencies>
