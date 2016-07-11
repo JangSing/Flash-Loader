@@ -14,12 +14,36 @@ USB_OTG_CORE_HANDLE	USB_OTG_dev;
 #define ADDRESS_SECTOR_18 0x08140000
 #define DATA_PROGRAM 	  0x2015
 
-uint8_t buffChar[]={'h','e','l','l','o'};
-uint8_t c;
+#define PROGRAM	0x10000001
+#define ERASE	0x10000002
+#define READ	0x10000003
+
+typedef enum{IDLE,RECEIVE_TYPE1,RECEIVE_TYPE2,RECEIVE_LENGTH,RECEIVE_VALUE,
+				FLASH_PROGRAM,FLASH_ERASE,FLASH_READ}State;
+
+
+
+typedef struct{
+	State state;
+}McuTlv;
+
+typedef struct TlvPacket TlvPacket;
+struct TlvPacket {
+  uint8_t type1;
+  uint8_t type2;
+  uint8_t length;
+  int8_t  data[0];
+};
+
+uint8_t byte;
+TlvPacket packet;
 
 int main(void) {
 	FLASH_Status status=FLASH_COMPLETE;
 	uint32_t *ptr=ADDRESS_SECTOR_18;
+
+	McuTlv tlv={IDLE};
+
     SystemInit();
 	USBD_Init(	&USB_OTG_dev,
 				USB_OTG_HS_CORE_ID,
@@ -27,24 +51,42 @@ int main(void) {
 				&USBD_CDC_cb,
 				&USR_cb);
 	while(1){
-    	if(VCP_get_char(&c)){
-    		switch(c){
-    		case 'v':
-    			VCP_send_buffer(buffChar, 6);break;
-    		case 'p':
-    			FLASH_Unlock();
-    			while(status==FLASH_BUSY);
-    			status=FLASH_ProgramHalfWord(ADDRESS_SECTOR_18, DATA_PROGRAM);
-    			while(status==FLASH_BUSY);
-    			FLASH_Lock();break;
-    		case 'e':
-    			FLASH_Unlock();
-    			while(status==FLASH_BUSY);
-    			status=FLASH_EraseSector(FLASH_CR_SNB_4|FLASH_CR_SNB_2|FLASH_CR_SNB_1, FLASH_VOLTAGE_RANGE_3);
-    			while(status==FLASH_BUSY);
-    			FLASH_Lock();break;
-    		default :break;
+
+    	switch(tlv.state){
+    	case IDLE:
+    		if(VCP_get_char(&byte)){
+    			tlv.state=RECEIVE_TYPE1;
     		}
+    		break;
+    	case RECEIVE_TYPE1:
+    		if(VCP_get_char(&byte)){
+    			packet.type1=byte;
+    			tlv.state=RECEIVE_TYPE2;
+    		}
+    		break;
+    	case RECEIVE_TYPE2:
+    		if(VCP_get_char(&byte)){
+    			packet.type2=byte;
+    			tlv.state=RECEIVE_LENGTH;
+    		}
+    		break;
+    	case RECEIVE_LENGTH:
+    		if(VCP_get_char(&byte)){
+    		    packet.length=byte;
+    		    tlv.state=RECEIVE_VALUE;
+    		}
+    		break;
+    	case RECEIVE_VALUE:
+    		if(VCP_get_char(&byte)){
+    			packet.data[0]=byte;
+    			if(packet.type1==PROGRAM)
+    				tlv.state=FLASH_PROGRAM;
+    			else if(packet.type1==ERASE)
+    			    tlv.state=FLASH_ERASE;
+    			else if(packet.type1==READ)
+    				tlv.state=FLASH_READ;
+    		}
+    		break;
     	}
 	}
 
