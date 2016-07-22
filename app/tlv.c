@@ -4,7 +4,7 @@
 
 void tlvStateMachine(TlvInfo *tlvInfo,uint8_t byteReceived){
   switch(tlvInfo->state){
-    case IDLE :
+    case TLV_IDLE :
       tlvInfo->ptr->type1=byteReceived;
       tlvInfo->state=TYPE1_RECEIVED;
     break;
@@ -26,7 +26,7 @@ void tlvStateMachine(TlvInfo *tlvInfo,uint8_t byteReceived){
     break;
     case VALUE_RECEIVED:
       tlvInfo->index=0;
-      tlvInfo->state=IDLE;
+      tlvInfo->state=TLV_IDLE;
     break;
     default   :break;
   }

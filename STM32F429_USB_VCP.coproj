@@ -76,20 +76,20 @@
     <File name="App/stm32f4xx_it.h" path="app/stm32f4xx_it.h" type="1"/>
     <File name="Config/stm32f4xx_usart.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h" type="1"/>
     <File name="App/LinkedList.c" path="app/LinkedList.c" type="1"/>
+    <File name="usb_config/usb_defines.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usb_defines.h" type="1"/>
     <File name="usb_config/usbd_cdc_vcp.c" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_cdc_vcp.c" type="1"/>
     <File name="App/Flash.h" path="app/Flash.h" type="1"/>
-    <File name="usb_config/usb_defines.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usb_defines.h" type="1"/>
     <File name="usb_config/usb_core.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usb_core.h" type="1"/>
     <File name="Config/stm32f4xx_rcc.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h" type="1"/>
     <File name="App/stm32f4xx_conf.h" path="app/stm32f4xx_conf.h" type="1"/>
     <File name="usb_config/usbd_req.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_req.h" type="1"/>
     <File name="Core/core_cmSimd.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/CMSIS/Include/core_cmSimd.h" type="1"/>
-    <File name="usb_config/usbd_conf.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_conf.h" type="1"/>
     <File name="Config/stm32f4xx.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" type="1"/>
+    <File name="usb_config/usbd_conf.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_conf.h" type="1"/>
     <File name="App/tlv.c" path="app/tlv.c" type="1"/>
+    <File name="usb_config/usb_bsp.c" path="00-STM32F429_LIBRARIES/usb_cdc_device/usb_bsp.c" type="1"/>
     <File name="Config/stm32f4xx_gpio.c" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c" type="1"/>
     <File name="Config/stm32f4xx_flash.c" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c" type="1"/>
-    <File name="usb_config/usb_bsp.c" path="00-STM32F429_LIBRARIES/usb_cdc_device/usb_bsp.c" type="1"/>
     <File name="usb_config/usbd_usr.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_usr.h" type="1"/>
     <File name="App/tlv.h" path="app/tlv.h" type="1"/>
     <File name="App/LinkedList.h" path="app/LinkedList.h" type="1"/>
@@ -100,8 +100,8 @@
     <File name="Config/stm32f4xx_flash.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash.h" type="1"/>
     <File name="Config/stm32f4xx_exti.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_exti.h" type="1"/>
     <File name="usb_config/usbd_core.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_core.h" type="1"/>
-    <File name="Config/misc.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/misc.h" type="1"/>
     <File name="App/main.c" path="app/main.c" type="1"/>
+    <File name="Config/misc.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/misc.h" type="1"/>
     <File name="usb_config/usbd_cdc_core.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_cdc_core.h" type="1"/>
     <File name="usb_config/usb_bsp.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usb_bsp.h" type="1"/>
     <File name="App" path="" type="2"/>
@@ -110,8 +110,8 @@
     <File name="usb_config" path="" type="2"/>
     <File name="Core/core_cmFunc.h" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/CMSIS/Include/core_cmFunc.h" type="1"/>
     <File name="usb_config/usbd_usr.c" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_usr.c" type="1"/>
-    <File name="Config/stm32f4xx_usart.c" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c" type="1"/>
     <File name="usb_config/usbd_ioreq.h" path="00-STM32F429_LIBRARIES/usb_cdc_device/usbd_ioreq.h" type="1"/>
+    <File name="Config/stm32f4xx_usart.c" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c" type="1"/>
     <File name="usb_config/usb_dcd.c" path="00-STM32F429_LIBRARIES/usb_cdc_device/usb_dcd.c" type="1"/>
     <File name="App/Flash.c" path="app/Flash.c" type="1"/>
     <File name="Config/stm32f4xx_exti.c" path="00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c" type="1"/>

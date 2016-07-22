@@ -10,18 +10,28 @@
 #include "usb_dcd_int.h"
 #include "tlv.h"
 #include "LinkedList.h"
+#include "Flash.h"
 
 USB_OTG_CORE_HANDLE	USB_OTG_dev;
 
 
 int main(void) {
   uint8_t byteReceived;
-  //Queue Static Element
-  LinkedList list;
   int counter=0;
 
+  //USB initializing
+  SystemInit();
+  USBD_Init(  &USB_OTG_dev,
+              USB_OTG_HS_CORE_ID,
+              &USR_desc,
+              &USBD_CDC_cb,
+              &USR_cb);
+
+  //initializing linked list
+  LinkedList list;
   linkedListInit(&list);
-  
+
+  //create buffer for each tlv element
   TlvPacket packet[10]={};
   tlvElement tlvEle[10]={};
 
@@ -36,24 +46,28 @@ int main(void) {
   tlvEle[8].tlv=&packet[8];
   tlvEle[9].tlv=&packet[9];
 
-  
+  tlvElement *deQEle=NULL;
+
+  //initialize tlv structure
   uint8_t buffer[258]={};
-  TlvInfo tlvInfo={IDLE,0,(TlvPacket *)buffer};
+  TlvInfo tlvInfo={TLV_IDLE,0,(TlvPacket *)buffer};
   
-  SystemInit();
-  USBD_Init(  &USB_OTG_dev,
-              USB_OTG_HS_CORE_ID,
-              &USR_desc,
-              &USBD_CDC_cb,
-              &USR_cb);
+  FlashInfo flashInfo={FLASH_IDLE};
+
   while(1){
     if(VCP_get_char(&byteReceived)){
       tlvStateMachine(&tlvInfo,byteReceived);
     }
     if(tlvInfo.state==VALUE_RECEIVED){
       packet[counter]=*(tlvInfo.ptr);
-      queueTlv((ListElement *)(&tlvEle[counter]),&list );
+      enQueueTlv(&list, (ListElement *)(&tlvEle[counter]));
       counter++;
+    }
+    if(list.tail!=NULL && deQEle==NULL){
+      deQEle=(tlvElement *)(deQueue(&list));
+    }
+    if(deQEle!=NULL){
+      flashStateMachine(&flashInfo,deQEle->tlv);
     }
   }
 

@@ -19,9 +19,8 @@ ListElement *createListElement(void *value);
 
 //*** Adding Element function start here ***
 
-void queueTlv(ListElement *NewEle,LinkedList *List );
-void AddFirst(LinkedList *stack,ListElement *NewElem);
-
+void enQueueTlv(LinkedList *list,ListElement *NewElem);
+ListElement *deQueue(LinkedList *List);
 
 
 #endif // LinkedList_H

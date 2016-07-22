@@ -14,7 +14,7 @@ int main() {
   
   while(1){
     printf("Send a byte...\n");
-    *inBuff=0x05;
+    *inBuff=0x10;
     writeToSerialPort(hSerial, inBuff, 1);
     // size = readFromSerialPort(hSerial, buffer, 32);
     // printf("%.*s\n", size, buffer);

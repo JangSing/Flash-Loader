@@ -2,12 +2,7 @@
 #define tlv_H
 #include <stdint.h>
 
-#define PROGRAM	0x10000001
-#define ERASE	0x10000002
-#define READ	0x10000003
-
-typedef enum{IDLE,TYPE1_RECEIVED,TYPE2_RECEIVED,LENGTH_RECEIVED,VALUE_RECEIVED}State;
-
+typedef enum{TLV_IDLE,TYPE1_RECEIVED,TYPE2_RECEIVED,LENGTH_RECEIVED,VALUE_RECEIVED}TlvState;
 
 typedef struct TlvPacket TlvPacket;
 struct TlvPacket {
@@ -18,7 +13,7 @@ struct TlvPacket {
 };
 
 typedef struct{
-  State     state;
+  TlvState  state;
   int       index;
   TlvPacket *ptr;
 }TlvInfo;
