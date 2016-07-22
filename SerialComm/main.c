@@ -12,6 +12,8 @@ int main() {
   printf("Opening %s\n", comPort);
   HANDLE hSerial = initSerialComm(comPort, 9600);
   
+  TlvPacket packet[10]={};
+  
   while(1){
     printf("Send a byte...\n");
     *inBuff=0x10;
