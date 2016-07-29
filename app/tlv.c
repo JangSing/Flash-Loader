@@ -18,6 +18,7 @@ void tlvStateMachine(TlvInfo *tlvInfo,uint8_t byteReceived){
     break;
     case LENGTH_RECEIVED:
       tlvInfo->ptr->data[tlvInfo->index]=byteReceived;
+
       (tlvInfo->index)++;
       if(tlvInfo->index != tlvInfo->ptr->length)
         tlvInfo->state=LENGTH_RECEIVED;
@@ -30,4 +31,5 @@ void tlvStateMachine(TlvInfo *tlvInfo,uint8_t byteReceived){
     break;
     default   :break;
   }
+
 }

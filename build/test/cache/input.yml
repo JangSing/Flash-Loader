@@ -20,6 +20,7 @@
   - "-:test/support"
   :source:
   - src/**
+  - app/**
   :support:
   - test/support
   :include: []
@@ -36,10 +37,10 @@
 :defines:
   :test:
   - &1 []
-  - TEST
+  - TEST=
   :test_preprocess:
   - *1
-  - TEST
+  - TEST=
   :release: []
   :release_preprocess: []
   :commmon: []
@@ -49,7 +50,7 @@
   :source: ".c"
   :assembly: ".s"
   :object: ".o"
-  :executable: ".out"
+  :executable: ".exe"
   :map: ".map"
   :list: ".lst"
   :testpass: ".pass"

@@ -32,43 +32,36 @@ int main(void) {
   linkedListInit(&list);
 
   //create buffer for each tlv element
-  TlvPacket packet[10]={};
-  tlvElement tlvEle[10]={};
+  TlvElement tlvEle[10]={};
 
-  tlvEle[0].tlv=&packet[0];
-  tlvEle[1].tlv=&packet[1];
-  tlvEle[2].tlv=&packet[2];
-  tlvEle[3].tlv=&packet[3];
-  tlvEle[4].tlv=&packet[4];
-  tlvEle[5].tlv=&packet[5];
-  tlvEle[6].tlv=&packet[6];
-  tlvEle[7].tlv=&packet[7];
-  tlvEle[8].tlv=&packet[8];
-  tlvEle[9].tlv=&packet[9];
-
-  tlvElement *deQEle=NULL;
+  TlvElement *deQEle=NULL;
 
   //initialize tlv structure
-  uint8_t buffer[258]={};
+  uint8_t buffer[DATA_SIZE]={};
   TlvInfo tlvInfo={TLV_IDLE,0,(TlvPacket *)buffer};
-  
+
   FlashInfo flashInfo={FLASH_IDLE};
 
+
   while(1){
+
     if(VCP_get_char(&byteReceived)){
       tlvStateMachine(&tlvInfo,byteReceived);
     }
+
     if(tlvInfo.state==VALUE_RECEIVED){
-      packet[counter]=*(tlvInfo.ptr);
-      enQueueTlv(&list, (ListElement *)(&tlvEle[counter]));
+      tlvEle[counter].tlv=*(tlvInfo.ptr);
+      enQueue(&list, (ListElement *)(&tlvEle[counter]));
       counter++;
     }
     if(list.tail!=NULL && deQEle==NULL){
-      deQEle=(tlvElement *)(deQueue(&list));
+      deQEle=(TlvElement *)(deQueue(&list));
     }
+
     if(deQEle!=NULL){
-      flashStateMachine(&flashInfo,deQEle->tlv);
+      flashStateMachine(&flashInfo,&(deQEle->tlv));
     }
+
   }
 
 }

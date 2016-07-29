@@ -10,8 +10,7 @@ void linkedListInit(LinkedList *list){
   list -> length = 0;
 }
 
-void enQueueTlv(LinkedList *list,ListElement *NewElem){
-
+void enQueue(LinkedList *list,ListElement *NewElem){
 
   if(list->head==NULL && list->tail==NULL){
     list->head=NewElem;

@@ -19,7 +19,7 @@ ListElement *createListElement(void *value);
 
 //*** Adding Element function start here ***
 
-void enQueueTlv(LinkedList *list,ListElement *NewElem);
+void enQueue(LinkedList *list,ListElement *NewElem);
 ListElement *deQueue(LinkedList *List);
 
 
