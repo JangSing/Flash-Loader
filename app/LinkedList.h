@@ -1,6 +1,5 @@
 #ifndef LinkedList_H
 #define LinkedList_H
-#include "tlv.h"
 
 typedef struct ListElement ListElement;
 struct ListElement{
@@ -19,8 +18,10 @@ ListElement *createListElement(void *value);
 
 //*** Adding Element function start here ***
 
-void enQueue(LinkedList *list,ListElement *NewElem);
-ListElement *deQueue(LinkedList *List);
+void addFirst(LinkedList *list,ListElement *NewElem);
+ListElement *removeLast(LinkedList *List);
+
+
 
 
 #endif // LinkedList_H

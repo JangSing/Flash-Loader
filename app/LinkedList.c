@@ -1,5 +1,4 @@
 #include "LinkedList.h"
-#include "tlv.h"
 #include <stdio.h>
 #include <assert.h>
 
@@ -10,7 +9,7 @@ void linkedListInit(LinkedList *list){
   list -> length = 0;
 }
 
-void enQueue(LinkedList *list,ListElement *NewElem){
+void addFirst(LinkedList *list,ListElement *NewElem){
 
   if(list->head==NULL && list->tail==NULL){
     list->head=NewElem;
@@ -27,7 +26,7 @@ void enQueue(LinkedList *list,ListElement *NewElem){
   }
 }
 
-ListElement *deQueue(LinkedList *List){
+ListElement *removeLast(LinkedList *List){
   ListElement *deQEle;
   ListElement *travel;
 

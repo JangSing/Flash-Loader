@@ -27,8 +27,16 @@ struct TlvElement{
   TlvPacket tlv;
 };
 
+// void tlvReceivedPacket(TlvInfo *tlvInfo,TlvElement *tlvEle, LinkedList *list);
 void tlvReceivedPacket( TlvInfo *tlvInfo,
-                        TlvElement *tlvEle,
+                        uint8_t byteReceived,
+                        TlvElement *tlvEle, 
                         LinkedList *list);
+
+// TlvPacket *alocateTlvPacket();
+// void freeTlvPacket(TlvPacket *tlv);
+
+
+
 
 #endif // tlv_H

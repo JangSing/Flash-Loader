@@ -1,6 +1,6 @@
 #ifndef Flash_H
 #define Flash_H
-#include "tlv.h"
+#include "tlv_tb.h"
 
 typedef enum{FLASH_IDLE,FLASH_READ,FLASH_PROGRAM,FLASH_ERASE}FlashState;
 

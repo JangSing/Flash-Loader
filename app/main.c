@@ -16,9 +16,6 @@ USB_OTG_CORE_HANDLE	USB_OTG_dev;
 
 
 int main(void) {
-  uint8_t byteReceived;
-  int counter=0;
-
   //USB initializing
   SystemInit();
   USBD_Init(  &USB_OTG_dev,
@@ -34,36 +31,16 @@ int main(void) {
   //create buffer for each tlv element
   TlvElement tlvEle[10]={};
 
-  TlvElement *deQEle=NULL;
-
   //initialize tlv structure
-  uint8_t buffer[DATA_SIZE]={};
-  TlvInfo tlvInfo={TLV_IDLE,0,(TlvPacket *)buffer};
+  TlvPacket buffer={};
+  TlvInfo tlvInfo={TLV_IDLE,0,&buffer};
 
-  FlashInfo flashInfo={FLASH_IDLE};
-
-
+  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL};
   while(1){
-
-    if(VCP_get_char(&byteReceived)){
-      tlvStateMachine(&tlvInfo,byteReceived);
-    }
-
-    if(tlvInfo.state==VALUE_RECEIVED){
-      tlvEle[counter].tlv=*(tlvInfo.ptr);
-      enQueue(&list, (ListElement *)(&tlvEle[counter]));
-      counter++;
-    }
-    if(list.tail!=NULL && deQEle==NULL){
-      deQEle=(TlvElement *)(deQueue(&list));
-    }
-
-    if(deQEle!=NULL){
-      flashStateMachine(&flashInfo,&(deQEle->tlv));
-    }
-
+    tlvReceivedPacket(&tlvInfo,tlvEle,&list);
+    tlvInterpreter(&list,&flashInfo);
+    
   }
-
 }
 
 

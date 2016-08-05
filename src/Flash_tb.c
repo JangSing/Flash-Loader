@@ -1,9 +1,7 @@
 #include <stdint.h>
 #include <stdlib.h>
-#include "stm32f4xx_flash.h"
-#include "stm32f4xx_flash_ramfunc.h"
-#include "Flash.h"
-#include "tlv.h"
+#include "Flash_tb.h"
+#include "tlv_tb.h"
 
 void tlvInterpreter(LinkedList *list,FlashInfo *flashInfo){
   TlvElement *deQEle;
@@ -34,4 +32,3 @@ void tlvInterpreter(LinkedList *list,FlashInfo *flashInfo){
     default   :break;
   }
 }
-
