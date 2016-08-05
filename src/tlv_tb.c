@@ -5,8 +5,7 @@
 
 void tlvReceivedPacket( TlvInfo *tlvInfo,
                         uint8_t byteReceived,
-                        TlvElement *tlvEle, 
-                        LinkedList *list){
+                        TlvElement *tlvEle){
                           
   switch(tlvInfo->state){
     case TLV_IDLE :
@@ -32,8 +31,8 @@ void tlvReceivedPacket( TlvInfo *tlvInfo,
     break;
     case VALUE_RECEIVED:
       tlvInfo->index=0;
-      tlvEle[list->length].tlv=*(tlvInfo->ptr);
-      addFirst(list, (ListElement *)(&tlvEle[list->length]));
+      tlvEle[tlvInfo->list.length].tlv=*(tlvInfo->ptr);
+      addFirst(&tlvInfo->list, (ListElement *)(&tlvEle[tlvInfo->list.length]));
       tlvInfo->state=TLV_IDLE;
     break;
     default   :break;

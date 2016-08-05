@@ -19,6 +19,7 @@ typedef struct{
   TlvState  state;
   int       index;
   TlvPacket *ptr;
+  LinkedList list;
 }TlvInfo;
 
 typedef struct TlvElement TlvElement;
@@ -30,8 +31,7 @@ struct TlvElement{
 // void tlvReceivedPacket(TlvInfo *tlvInfo,TlvElement *tlvEle, LinkedList *list);
 void tlvReceivedPacket( TlvInfo *tlvInfo,
                         uint8_t byteReceived,
-                        TlvElement *tlvEle, 
-                        LinkedList *list);
+                        TlvElement *tlvEle);
 
 // TlvPacket *alocateTlvPacket();
 // void freeTlvPacket(TlvPacket *tlv);

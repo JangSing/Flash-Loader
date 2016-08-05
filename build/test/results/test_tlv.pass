@@ -18,16 +18,12 @@
 - :test: test_tlvInterpreter_deQueue_tlv_and_interprete_correctly
   :line: 163
   :message: ''
-- :test: test_testing
-  :line: 183
-  :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 6
-  :passed: 6
+  :total: 5
+  :passed: 5
   :failed: 0
   :ignored: 0
 :stdout:
-- '0x78563412'
 - ''

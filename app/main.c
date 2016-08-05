@@ -33,11 +33,11 @@ int main(void) {
 
   //initialize tlv structure
   TlvPacket buffer={};
-  TlvInfo tlvInfo={TLV_IDLE,0,&buffer};
+  TlvInfo tlvInfo={TLV_IDLE,0,&buffer,list};
 
   FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL};
   while(1){
-    tlvReceivedPacket(&tlvInfo,tlvEle,&list);
+    tlvReceivedPacket(&tlvInfo,tlvEle);
     tlvInterpreter(&list,&flashInfo);
     
   }

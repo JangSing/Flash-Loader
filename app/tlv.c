@@ -9,8 +9,7 @@
 #include "usb_dcd_int.h"
 
 void tlvReceivedPacket( TlvInfo *tlvInfo,
-                        TlvElement *tlvEle, 
-                        LinkedList *list){
+                        TlvElement *tlvEle){
                           
   uint8_t byteReceived;
   if(VCP_get_char(&byteReceived)){
@@ -38,8 +37,8 @@ void tlvReceivedPacket( TlvInfo *tlvInfo,
       break;
       case VALUE_RECEIVED:
         tlvInfo->index=0;
-        tlvEle[list->length].tlv=*(tlvInfo->ptr);
-        addFirst(list, (ListElement *)(&tlvEle[list->length]));
+        tlvEle[tlvInfo->list.length].tlv=*(tlvInfo->ptr);
+        addFirst(&tlvInfo->list, (ListElement *)(&tlvEle[tlvInfo->list.length]));
         tlvInfo->state=TLV_IDLE;
       break;
       default   :break;

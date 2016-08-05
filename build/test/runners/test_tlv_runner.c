@@ -35,7 +35,6 @@ extern void test_function_tlvReceivedPacket_passing_in_tlv_info_should_give_corr
 extern void test_element_packet_is_pointing_to_tlvInfo_and_it_was_queued_correctly(void);
 extern void test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv(void);
 extern void test_tlvInterpreter_deQueue_tlv_and_interprete_correctly(void);
-extern void test_testing(void);
 
 
 //=======Test Reset Option=====
@@ -56,7 +55,6 @@ int main(void)
   RUN_TEST(test_element_packet_is_pointing_to_tlvInfo_and_it_was_queued_correctly, 80);
   RUN_TEST(test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv, 108);
   RUN_TEST(test_tlvInterpreter_deQueue_tlv_and_interprete_correctly, 163);
-  RUN_TEST(test_testing, 183);
 
   return (UnityEnd());
 }
