@@ -14,6 +14,7 @@
 
 USB_OTG_CORE_HANDLE	USB_OTG_dev;
 
+#define noOfTlv 10
 
 int main(void) {
   //USB initializing
@@ -29,17 +30,18 @@ int main(void) {
   linkedListInit(&list);
 
   //create buffer for each tlv element
-  TlvElement tlvEle[10]={};
+  TlvElement tlvEle[noOfTlv]={};
+  initTlvAllocator(tlvEle,noOfTlv);
+
 
   //initialize tlv structure
   TlvPacket buffer={};
-  TlvInfo tlvInfo={TLV_IDLE,0,&buffer,list};
+  TlvInfo tlvReceivedInfo={TLV_IDLE,0,&buffer,list};
 
-  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL};
+  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL,&tlvReceivedInfo.list};
   while(1){
-    tlvReceivedPacket(&tlvInfo,tlvEle);
-    tlvInterpreter(&list,&flashInfo);
-    
+    tlvReceivedPacket(&tlvReceivedInfo,tlvEle);
+    tlvInterpreter(&flashInfo);
   }
 }
 

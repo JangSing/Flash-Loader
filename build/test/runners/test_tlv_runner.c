@@ -50,11 +50,11 @@ void resetTest(void)
 int main(void)
 {
   UnityBegin("test_tlv.c");
-  RUN_TEST(test_function_tlvReceivedPacket_running_in_correct_state, 20);
-  RUN_TEST(test_function_tlvReceivedPacket_passing_in_tlv_info_should_give_correct_result, 53);
-  RUN_TEST(test_element_packet_is_pointing_to_tlvInfo_and_it_was_queued_correctly, 80);
-  RUN_TEST(test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv, 108);
-  RUN_TEST(test_tlvInterpreter_deQueue_tlv_and_interprete_correctly, 163);
+  RUN_TEST(test_function_tlvReceivedPacket_running_in_correct_state, 21);
+  RUN_TEST(test_function_tlvReceivedPacket_passing_in_tlv_info_should_give_correct_result, 54);
+  RUN_TEST(test_element_packet_is_pointing_to_tlvInfo_and_it_was_queued_correctly, 81);
+  RUN_TEST(test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv, 109);
+  RUN_TEST(test_tlvInterpreter_deQueue_tlv_and_interprete_correctly, 164);
 
   return (UnityEnd());
 }

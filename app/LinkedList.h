@@ -14,12 +14,14 @@ typedef struct {
 }LinkedList;
 
 void linkedListInit(LinkedList *list);
-ListElement *createListElement(void *value);
 
 //*** Adding Element function start here ***
 
+void addLast(ListElement *NewEle,LinkedList *List );
 void addFirst(LinkedList *list,ListElement *NewElem);
 ListElement *removeLast(LinkedList *List);
+ListElement *removeFirst(LinkedList *stack);
+
 
 
 

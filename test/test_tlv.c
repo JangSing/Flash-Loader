@@ -6,6 +6,7 @@
 #include "Flash_tb.h"
 #include "LinkedList.h"
 #include "CustomAssertion.h"
+#include "tlvAllocator.h"
 
 
 
@@ -170,9 +171,9 @@ void test_tlvInterpreter_deQueue_tlv_and_interprete_correctly(void)
   list.head=(ListElement *)(&tlvEle[2]);
   list.tail=(ListElement *)(&tlvEle[0]);
   
-  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL};
+  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL,&list};
   
-  tlvInterpreter(&list,&flashInfo);
+  tlvInterpreter(&flashInfo);
   TEST_ASSERT_EQUAL_PTR(&tlvEle[2], list.head);
   TEST_ASSERT_EQUAL_PTR(&tlvEle[1], list.head->next);
   TEST_ASSERT_NULL( list.head->next->next);
@@ -180,14 +181,3 @@ void test_tlvInterpreter_deQueue_tlv_and_interprete_correctly(void)
   TEST_ASSERT_EQUAL(FLASH_READ,flashInfo.state);
 }
 
-// void test_testing(void){
-  // uint8_t data[10]={0x12,0x34,0x56,0x78,0x11};
-  
-  // uint32_t address;
-  
-  // address=*(uint32_t *)(&data[0]);
-  
-  // printf("0x%x",address);
-  
-  
-// }

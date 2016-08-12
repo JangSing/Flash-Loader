@@ -5,14 +5,16 @@
 #include "Flash.h"
 #include "tlv.h"
 
-void tlvInterpreter(LinkedList *list,FlashInfo *flashInfo){
+
+void tlvInterpreter(FlashInfo *flashInfo){
   TlvElement *deQEle=NULL;
   TlvPacket  *tlvPacket;
-  if(list->tail!=NULL && flashInfo->tlv==NULL){
-    deQEle=(TlvElement *)(removeLast(list));
+  if(flashInfo->list->tail!=NULL && flashInfo->status==INTERPRETE_READY){
+    deQEle=(TlvElement *)(removeLast(flashInfo->list));
     flashInfo->tlv=&deQEle->tlv;
   }
   if(flashInfo->tlv!=NULL){
+    flashInfo->status=INTERPRETE_BUSY;
     tlvPacket=flashInfo->tlv;
     switch(flashInfo->state){
       case FLASH_IDLE:
@@ -24,7 +26,11 @@ void tlvInterpreter(LinkedList *list,FlashInfo *flashInfo){
           flashInfo->state=FLASH_ERASE;
       break;
       case FLASH_READ:
-        flashInfo->status=readFlash(*(uint32_t *)(&tlvPacket->data[0]),tlvPacket->data[4]);
+        flashInfo->status=readFlash(tlvPacket);
+        if(flashInfo->status==INTERPRETE_COMPLETE){
+          flashInfo->state=FLASH_IDLE;
+          flashInfo->status=INTERPRETE_READY;
+        }
       break;
       case FLASH_PROGRAM:
 
@@ -37,8 +43,12 @@ void tlvInterpreter(LinkedList *list,FlashInfo *flashInfo){
   }
 }
 
-Status readFlash(uint32_t address,uint8_t length){
+Status readFlash(TlvPacket  *tlvPacket){
+  uint32_t *address=(uint32_t *)(*(uint32_t *)(&tlvPacket->data[0]));
+  uint8_t length=tlvPacket->data[4];
+
   
-  
-  
+
+
+  return INTERPRETE_COMPLETE;
 }

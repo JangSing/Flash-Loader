@@ -2,7 +2,7 @@
 #define Flash_H
 #include "tlv.h"
 
-typedef enum{FLASH_IDLE,FLASH_READ,FLASH_PROGRAM,FLASH_ERASE}FlashState;
+typedef enum{FLASH_IDLE,FLASH_READ,FLASH_PROGRAM,FLASH_ERASE,FLASH_END}FlashState;
 
 typedef enum{ INTERPRETE_COMPLETE,
               INTERPRETE_READY,
@@ -12,13 +12,14 @@ typedef struct{
   FlashState  state;
   Status status;
   TlvPacket *tlv;
+  LinkedList *list;
 }FlashInfo;
 
 #define TYPE_READ     0x10
 #define TYPE_PROGRAM  0x11
 #define TYPE_ERASE    0x12
 
-void tlvInterpreter(LinkedList *list,FlashInfo *flashInfo);
-Status readFlash(uint32_t address,uint8_t length);
+void tlvInterpreter(FlashInfo *flashInfo);
+Status readFlash(TlvPacket  *tlvPacket);
 
 #endif // Flash_H

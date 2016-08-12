@@ -1,3 +1,4 @@
+#include "tlvAllocator.h"
 #include "CustomAssertion.h"
 #include "LinkedList.h"
 #include "Flash_tb.h"
@@ -41,53 +42,53 @@ void test_function_tlvReceivedPacket_running_in_correct_state(void)
 
 
 
-  UnityAssertEqualNumber((_U_SINT)((TLV_IDLE)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)27, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((TLV_IDLE)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)28, UNITY_DISPLAY_STYLE_INT);
 
  tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
 
-  UnityAssertEqualNumber((_U_SINT)((TYPE1_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)29, UNITY_DISPLAY_STYLE_INT);
-
-
-
- tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
-
-  UnityAssertEqualNumber((_U_SINT)((TYPE2_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)32, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((TYPE1_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)30, UNITY_DISPLAY_STYLE_INT);
 
 
 
  tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
 
-  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)35, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((TYPE2_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)33, UNITY_DISPLAY_STYLE_INT);
 
 
 
  tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
 
-  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)38, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)36, UNITY_DISPLAY_STYLE_INT);
 
 
 
  tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
 
-  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)41, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)39, UNITY_DISPLAY_STYLE_INT);
 
 
 
  tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
 
-  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)44, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)42, UNITY_DISPLAY_STYLE_INT);
 
 
 
  tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
 
-  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)47, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)45, UNITY_DISPLAY_STYLE_INT);
 
 
 
  tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
 
-  UnityAssertEqualNumber((_U_SINT)((VALUE_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)50, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((LENGTH_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)48, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ tlvReceivedPacket(&tlvInfo,byteReceived,((void *)0));
+
+  UnityAssertEqualNumber((_U_SINT)((VALUE_RECEIVED)), (_U_SINT)((tlvInfo.state)), (((void *)0)), (_U_UINT)51, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -125,21 +126,21 @@ void test_function_tlvReceivedPacket_passing_in_tlv_info_should_give_correct_res
 
 
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->type1)), (((void *)0)), (_U_UINT)69, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->type1)), (((void *)0)), (_U_UINT)70, UNITY_DISPLAY_STYLE_INT);
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->type2)), (((void *)0)), (_U_UINT)70, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->type2)), (((void *)0)), (_U_UINT)71, UNITY_DISPLAY_STYLE_INT);
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->length)), (((void *)0)), (_U_UINT)71, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->length)), (((void *)0)), (_U_UINT)72, UNITY_DISPLAY_STYLE_INT);
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[0])), (((void *)0)), (_U_UINT)72, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[0])), (((void *)0)), (_U_UINT)73, UNITY_DISPLAY_STYLE_INT);
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[1])), (((void *)0)), (_U_UINT)73, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[1])), (((void *)0)), (_U_UINT)74, UNITY_DISPLAY_STYLE_INT);
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[2])), (((void *)0)), (_U_UINT)74, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[2])), (((void *)0)), (_U_UINT)75, UNITY_DISPLAY_STYLE_INT);
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[3])), (((void *)0)), (_U_UINT)75, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[3])), (((void *)0)), (_U_UINT)76, UNITY_DISPLAY_STYLE_INT);
 
-  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[4])), (((void *)0)), (_U_UINT)76, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((tlvInfo.ptr->data[4])), (((void *)0)), (_U_UINT)77, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -189,13 +190,13 @@ void test_element_packet_is_pointing_to_tlvInfo_and_it_was_queued_correctly(void
 
 
 
-  customTestTlvEle(5, 5, 5, 5, 5, 5, 5, 5, 0, &(tlvEle[0].tlv), 101);;
+  customTestTlvEle(5, 5, 5, 5, 5, 5, 5, 5, 0, &(tlvEle[0].tlv), 102);;
 
 
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)103, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)104, UNITY_DISPLAY_STYLE_HEX32);
 
-  if ((((tlvInfo.list.head->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)104);;};
+  if ((((tlvInfo.list.head->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)105);;};
 
 
 
@@ -235,13 +236,13 @@ void test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv(void){
 
 
 
-  customTestTlvEle(1, 1, 1, 1, 0, 0, 0, 0, 0, &(tlvEle[0].tlv), 124);;
+  customTestTlvEle(1, 1, 1, 1, 0, 0, 0, 0, 0, &(tlvEle[0].tlv), 125);;
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)125, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)126, UNITY_DISPLAY_STYLE_HEX32);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.tail)), (((void *)0)), (_U_UINT)126, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.tail)), (((void *)0)), (_U_UINT)127, UNITY_DISPLAY_STYLE_HEX32);
 
-  if ((((tlvInfo.list.head->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)127);;};
+  if ((((tlvInfo.list.head->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)128);;};
 
 
 
@@ -261,17 +262,17 @@ void test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv(void){
 
 
 
-  customTestTlvEle(1, 1, 1, 1, 0, 0, 0, 0, 0, &(tlvEle[0].tlv), 137);;
+  customTestTlvEle(1, 1, 1, 1, 0, 0, 0, 0, 0, &(tlvEle[0].tlv), 138);;
 
-  customTestTlvEle(2, 2, 2, 2, 2, 0, 0, 0, 0, &(tlvEle[1].tlv), 138);;
+  customTestTlvEle(2, 2, 2, 2, 2, 0, 0, 0, 0, &(tlvEle[1].tlv), 139);;
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[1])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)139, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[1])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)140, UNITY_DISPLAY_STYLE_HEX32);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head->next)), (((void *)0)), (_U_UINT)140, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head->next)), (((void *)0)), (_U_UINT)141, UNITY_DISPLAY_STYLE_HEX32);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.tail)), (((void *)0)), (_U_UINT)141, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.tail)), (((void *)0)), (_U_UINT)142, UNITY_DISPLAY_STYLE_HEX32);
 
-  if ((((tlvInfo.list.head->next->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)142);;};
+  if ((((tlvInfo.list.head->next->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)143);;};
 
 
 
@@ -293,21 +294,21 @@ void test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv(void){
 
 
 
-  customTestTlvEle(1, 1, 1, 1, 0, 0, 0, 0, 0, &(tlvEle[0].tlv), 153);;
+  customTestTlvEle(1, 1, 1, 1, 0, 0, 0, 0, 0, &(tlvEle[0].tlv), 154);;
 
-  customTestTlvEle(2, 2, 2, 2, 2, 0, 0, 0, 0, &(tlvEle[1].tlv), 154);;
+  customTestTlvEle(2, 2, 2, 2, 2, 0, 0, 0, 0, &(tlvEle[1].tlv), 155);;
 
-  customTestTlvEle(3, 3, 3, 3, 3, 3, 0, 0, 0, &(tlvEle[2].tlv), 155);;
+  customTestTlvEle(3, 3, 3, 3, 3, 3, 0, 0, 0, &(tlvEle[2].tlv), 156);;
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[2])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)156, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[2])), (_U_SINT)(_UP)((tlvInfo.list.head)), (((void *)0)), (_U_UINT)157, UNITY_DISPLAY_STYLE_HEX32);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[1])), (_U_SINT)(_UP)((tlvInfo.list.head->next)), (((void *)0)), (_U_UINT)157, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[1])), (_U_SINT)(_UP)((tlvInfo.list.head->next)), (((void *)0)), (_U_UINT)158, UNITY_DISPLAY_STYLE_HEX32);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head->next->next)), (((void *)0)), (_U_UINT)158, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.head->next->next)), (((void *)0)), (_U_UINT)159, UNITY_DISPLAY_STYLE_HEX32);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.tail)), (((void *)0)), (_U_UINT)159, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[0])), (_U_SINT)(_UP)((tlvInfo.list.tail)), (((void *)0)), (_U_UINT)160, UNITY_DISPLAY_STYLE_HEX32);
 
-  if ((((tlvInfo.list.head->next->next->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)160);;};
+  if ((((tlvInfo.list.head->next->next->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)161);;};
 
 }
 
@@ -333,20 +334,20 @@ void test_tlvInterpreter_deQueue_tlv_and_interprete_correctly(void)
 
 
 
-  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,((void *)0)};
+  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,((void *)0),&list};
 
 
 
-  tlvInterpreter(&list,&flashInfo);
+  tlvInterpreter(&flashInfo);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[2])), (_U_SINT)(_UP)((list.head)), (((void *)0)), (_U_UINT)176, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[2])), (_U_SINT)(_UP)((list.head)), (((void *)0)), (_U_UINT)177, UNITY_DISPLAY_STYLE_HEX32);
 
-  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[1])), (_U_SINT)(_UP)((list.head->next)), (((void *)0)), (_U_UINT)177, UNITY_DISPLAY_STYLE_HEX32);
+  UnityAssertEqualNumber((_U_SINT)(_UP)((&tlvEle[1])), (_U_SINT)(_UP)((list.head->next)), (((void *)0)), (_U_UINT)178, UNITY_DISPLAY_STYLE_HEX32);
 
-  if ((((list.head->next->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)178);;};
+  if ((((list.head->next->next)) == ((void *)0))) {} else {UnityFail( (" Expected NULL"), (_U_UINT)(_U_UINT)(_U_UINT)179);;};
 
 
 
-  UnityAssertEqualNumber((_U_SINT)((FLASH_READ)), (_U_SINT)((flashInfo.state)), (((void *)0)), (_U_UINT)180, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((FLASH_READ)), (_U_SINT)((flashInfo.state)), (((void *)0)), (_U_UINT)181, UNITY_DISPLAY_STYLE_INT);
 
 }

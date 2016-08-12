@@ -16,6 +16,21 @@ int main() {
     printf("Send a byte...\n");
     *inBuff=0x10;
     writeToSerialPort(hSerial, inBuff, 1);
+    *inBuff=0x10;
+    writeToSerialPort(hSerial, inBuff, 1);
+    *inBuff=5;
+    writeToSerialPort(hSerial, inBuff, 1);
+    *inBuff=0x00;
+    writeToSerialPort(hSerial, inBuff, 1);
+    *inBuff=0x00;
+    writeToSerialPort(hSerial, inBuff, 1);
+    *inBuff=0x09;
+    writeToSerialPort(hSerial, inBuff, 1);
+    *inBuff=0x08;
+    writeToSerialPort(hSerial, inBuff, 1);
+    *inBuff=1;
+    writeToSerialPort(hSerial, inBuff, 1);
+    
     // size = readFromSerialPort(hSerial, buffer, 32);
     // printf("%.*s\n", size, buffer);
 
@@ -26,3 +41,5 @@ int main() {
   closeSerialPort(hSerial);
   return 0;
 }
+
+//0x0809 0000

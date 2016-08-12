@@ -9,6 +9,22 @@ void linkedListInit(LinkedList *list){
   list -> length = 0;
 }
 
+void addLast(ListElement *NewEle,LinkedList *List ){
+
+  if(List -> head == NULL && List -> tail == NULL){
+    List -> head = NewEle;
+    List -> tail = List -> head;
+    (List->length)++;
+  }
+  else if(NewEle==NULL){}
+
+  else {
+    List -> tail->next=NewEle;
+    List -> tail =List -> tail->next;
+    (List->length)++;
+  }
+}
+
 void addFirst(LinkedList *list,ListElement *NewElem){
 
   if(list->head==NULL && list->tail==NULL){
@@ -53,7 +69,27 @@ ListElement *removeLast(LinkedList *List){
   return deQEle;
 }
 
+ListElement *removeFirst(LinkedList *stack){
+  ListElement *ptr;
 
+  if(stack->head==NULL && stack->tail==NULL){
+    return NULL;
+  }
+  else if(stack->head->next==NULL){
+    ptr=stack->head;
+    stack->head=NULL;
+    stack->tail=NULL;
+    (stack->length)--;
+  }
+  else{
+    ptr=stack->head;
+    stack->head=stack->head->next;
+    (stack->length)--;
+  }
+
+  ptr->next=NULL;
+  return ptr;
+}
 
 
 

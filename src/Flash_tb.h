@@ -12,12 +12,13 @@ typedef struct{
   FlashState  state;
   Status status;
   TlvPacket *tlv;
+  LinkedList *list;
 }FlashInfo;
 
 #define TYPE_READ     0x10
 #define TYPE_PROGRAM  0x11
 #define TYPE_ERASE    0x12
 
-void tlvInterpreter(LinkedList *list,FlashInfo *flashInfo);
-
+void tlvInterpreter(FlashInfo *flashInfo);
+Status readFlash(TlvPacket  *tlvPacket);
 #endif // Flash_H
