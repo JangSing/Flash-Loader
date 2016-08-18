@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include "stm32f4xx_conf.h"
 #include "stm32f4xx.h"
-#include "stm32f4xx_flash.h"
-#include "stm32f4xx_flash_ramfunc.h"
 #include "usbd_cdc_core.h"
 #include "usbd_usr.h"
 #include "usbd_desc.h"
@@ -11,6 +9,7 @@
 #include "tlv.h"
 #include "LinkedList.h"
 #include "Flash.h"
+#include "tlvAllocator.h"
 
 USB_OTG_CORE_HANDLE	USB_OTG_dev;
 
@@ -25,23 +24,33 @@ int main(void) {
               &USBD_CDC_cb,
               &USR_cb);
 
-  //initializing linked list
-  LinkedList list;
-  linkedListInit(&list);
+  //receiverQueue
+  LinkedList receiverQueue;
+  linkedListInit(&receiverQueue);
+  
+  //senderQueue
+  LinkedList senderQueue;
+  linkedListInit(&senderQueue);
 
-  //create buffer for each tlv element
+  //init allocator
   TlvElement tlvEle[noOfTlv]={};
   initTlvAllocator(tlvEle,noOfTlv);
 
-
-  //initialize tlv structure
+  //initialize receive tlv structure
   TlvPacket buffer={};
-  TlvInfo tlvReceivedInfo={TLV_IDLE,0,&buffer,list};
+  TlvInfo tlvRECEIVEInfo={PROCESS_READY,IDLE_RECEIVE,0,&buffer,&receiverQueue};
 
-  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL,&tlvReceivedInfo.list};
+  //initialize flash structure
+  FlashObject flashObj={READ_IDLE,NULL,0,0,NULL,&senderQueue};
+  FlashInfo flashInfo={FLASH_IDLE,PROCESS_READY,NULL,tlvRECEIVEInfo.list,&flashObj};
+
+  //initialize send tlv structure
+  TlvInfo tlvSendingInfo={PROCESS_READY,TYPE1_SEND,0,flashInfo.obj->tlv,&senderQueue};
+  
   while(1){
-    tlvReceivedPacket(&tlvReceivedInfo,tlvEle);
+    tlvReceivePacket(&tlvRECEIVEInfo);
     tlvInterpreter(&flashInfo);
+    tlvSendPacket(&tlvSendingInfo);
   }
 }
 

@@ -1,37 +1,36 @@
-#ifndef TLV_H_
-#define TLV_H_
-
+#ifndef tlv_H
+#define tlv_H
+#include "LinkedList.h"
 #include <stdint.h>
+
+#define DATA_SIZE 258
+
+typedef enum{TLV_IDLE,TYPE1_RECEIVED,TYPE2_RECEIVED,LENGTH_RECEIVED,VALUE_RECEIVED}TlvState;
 
 typedef struct TlvPacket TlvPacket;
 struct TlvPacket {
   uint8_t type1;
   uint8_t type2;
   uint8_t length;
-  int8_t  data[0];
+  uint8_t  data[DATA_SIZE];
 };
 
-/**
- * Initiate the sending of TLV packet. This function is non-blocking, which
- * means it returns to the caller immediately after queueing the packet to
- * tlvHandlePacketSending() for sending.
- */
-void tlvSendPacket(TlvPacket *tlvPacket);
+typedef struct{
+  TlvState  state;
+  int       index;
+  TlvPacket *ptr;
+  LinkedList *list;
 
-/**
- * Try to retrieve an incoming TLV packet. If none available, NULL is
- * returned. This function is non-blocking.
- */
-TlvPacket *tlvGetPacket(void);
+}TlvInfo;
 
-/**
- * Initialize TLV module
- */
-void tlvInit(void);
+typedef struct TlvElement TlvElement;
+struct TlvElement{
+  TlvElement *next;
+  TlvPacket tlv;
+};
 
-/**
- * Service the TLV processes
- */
-void tlvRunService(void);
+void tlvReceivedPacket( TlvInfo *tlvInfo);
 
-#endif   // TLV_H_
+
+
+#endif // tlv_H

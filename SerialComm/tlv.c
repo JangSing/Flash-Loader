@@ -1,88 +1,88 @@
-#include "Tlv.h"
+#include <stdint.h>
+#include <stdlib.h>
+#include "tlv.h"
+#include "LinkedList.h"
+#include "tlvAllocator.h"
+#include "usbd_cdc_core.h"
+#include "usbd_usr.h"
+#include "usbd_desc.h"
+#include "usbd_cdc_vcp.h"
+#include "usb_dcd_int.h"
 
-typedef struct TlvPacketSendingObject TlvPacketSendingObject;
-struct TlvPacketSendingObject {
-  State   state;
-  Queue   *pktQueue;          // Sending queue of TLV packets
-  int32_t retryCount;         // The number of retry done
-  Exception *exception;       // Holds exception object to be thrown
-  // ...
-  // ...some other variables related to this TLV sender...
-  // ...
-};
+void tlvReceivedPacket( TlvInfo *tlvInfo){
 
-typedef struct TlvPacketReceivingObject TlvPacketReceivingObject;
-struct TlvPacketReceivingObject {
-  State   state;
-  Queue   *pktQueue;          // Receiving queue of TLV packets
-  Exception *exception;       // Holds exception object to be thrown
-  // ...
-  // ...some other variables related to this TLV receiver...
-  // ...
-};
+  uint8_t byteReceived;
+  TlvElement *tlvEle;
+  if(VCP_get_char(&byteReceived)){
+    switch(tlvInfo->state){
+      case TLV_IDLE :
+        tlvInfo->ptr->type1=byteReceived;
+        tlvInfo->state=TYPE1_RECEIVED;
+      break;
+      case TYPE1_RECEIVED:
+        tlvInfo->ptr->type2=byteReceived;
+        tlvInfo->state=TYPE2_RECEIVED;
+      break;
+      case TYPE2_RECEIVED:
+        tlvInfo->ptr->length=byteReceived;
+        tlvInfo->state=LENGTH_RECEIVED;
+      break;
+      case LENGTH_RECEIVED:
+        tlvInfo->ptr->data[tlvInfo->index]=byteReceived;
 
-TlvPacketSendingObject   txObj;     // The object that holds information
-                                    // about tlvHandlePacketSending()
-TlvPacketReceivingObject rxObj;     // The object that holds information
-                                    // about tlvHandlePacketReception()
-
-static void tlvHandlePacketSending(TlvPacketSendingObject *obj);
-static void tlvHandlePacketReception(TlvPacketReceivingObject *obj);
-
-/**
- * Initialize TLV module
- */
-void tlvInit(void) {
-  // Initialize USB or UART/USART
-  // ...
-  // Initialize txObj
-  // ...
-  // Initialize rxObj
-  // ..
+        (tlvInfo->index)++;
+        if(tlvInfo->index != tlvInfo->ptr->length)
+          tlvInfo->state=LENGTH_RECEIVED;
+        else
+          tlvInfo->state=VALUE_RECEIVED;
+      break;
+      case VALUE_RECEIVED:
+        tlvInfo->index=0;
+        tlvEle=(TlvElement *)(allocateTlv());
+        tlvEle->tlv=*(tlvInfo->ptr);
+        addFirst(tlvInfo->list, (ListElement *)(tlvEle));
+        tlvInfo->state=TLV_IDLE;
+      break;
+      default   :break;
+    }
+  }
 }
 
-/**
- * Service the TLV processes
- */
-void tlvRunService(void) {
-  tlvHandlePacketSending(&txObj);
-  tlvHandlePacketReception(&rxObj);
-}
+// void tlvSendPacket( TlvInfo *tlvInfo,
+                        // TlvElement *tlvEle){
 
-/**
- * Initiate the sending of TLV packet. This function is non-blocking, which
- * means it returns to the caller immediately after queueing the packet to
- * tlvHandlePacketSending() for sending.
- */
-void tlvSendPacket(TlvPacket *tlvPacket) {
-  // ...the implementation here...
-}
+  // uint8_t byteReceived;
+  // if(VCP_get_char(&byteReceived)){
+    // switch(tlvInfo->state){
+      // case TLV_IDLE :
+        // tlvInfo->ptr->type1=byteReceived;
+        // tlvInfo->state=TYPE1_RECEIVED;
+      // break;
+      // case TYPE1_RECEIVED:
+        // tlvInfo->ptr->type2=byteReceived;
+        // tlvInfo->state=TYPE2_RECEIVED;
+      // break;
+      // case TYPE2_RECEIVED:
+        // tlvInfo->ptr->length=byteReceived;
+        // tlvInfo->state=LENGTH_RECEIVED;
+      // break;
+      // case LENGTH_RECEIVED:
+        // tlvInfo->ptr->data[tlvInfo->index]=byteReceived;
 
-/**
- * Try to retrieve an incoming TLV packet. If none available, NULL is
- * returned. This function is non-blocking.
- */
-TlvPacket *tlvGetPacket(void) {
-  // ...the implementation here...
-}
+        // (tlvInfo->index)++;
+        // if(tlvInfo->index != tlvInfo->ptr->length)
+          // tlvInfo->state=LENGTH_RECEIVED;
+        // else
+          // tlvInfo->state=VALUE_RECEIVED;
+      // break;
+      // case VALUE_RECEIVED:
+        // tlvInfo->index=0;
+        // tlvEle[tlvInfo->list.length].tlv=*(tlvInfo->ptr);
+        // addFirst(&tlvInfo->list, (ListElement *)(&tlvEle[tlvInfo->list.length]));
+        // tlvInfo->state=TLV_IDLE;
+      // break;
+      // default   :break;
+    // }
+  // }
+// }
 
-/**
- * This function implements the state machine of the sending process of the
- * TLV packet. If packet sent not received by the receiver, the sender will
- * retry sending until MAX_SENDING_RETRY is reached, after which an exeception
- * is generated.
- */
-void tlvHandlePacketSending(TlvPacketSendingObject *obj) {
-  // ...the state machine implementatiton here...
-  // ...this function will call commSendByte()
-}
-
-/**
- * This function implements the state machine of the receiving process of the
- * TLV packet. If packet received is damaged, it responses with a NACK to
- * request sender to resend.
- */
-void tlvHandlePacketReception(TlvPacketReceivingObject *obj) {
-  // ...the state machine implementatiton here...
-  // ...this function will call commGetByte()
-}

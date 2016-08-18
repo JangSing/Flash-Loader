@@ -4,14 +4,14 @@
 #include "tlv_tb.h"
 
 void tlvInterpreter(FlashInfo *flashInfo){
-  TlvElement *deQEle=NULL;
+  TlvElement *deQEle;
   TlvPacket  *tlvPacket;
-  if(flashInfo->list->tail!=NULL && flashInfo->status==INTERPRETE_READY){
+  if(flashInfo->list->tail!=NULL && flashInfo->status==PROCESS_READY){
     deQEle=(TlvElement *)(removeLast(flashInfo->list));
     flashInfo->tlv=&deQEle->tlv;
   }
   if(flashInfo->tlv!=NULL){
-    flashInfo->status=INTERPRETE_BUSY;
+    flashInfo->status=PROCESS_BUSY;
     tlvPacket=flashInfo->tlv;
     switch(flashInfo->state){
       case FLASH_IDLE:
@@ -23,10 +23,11 @@ void tlvInterpreter(FlashInfo *flashInfo){
           flashInfo->state=FLASH_ERASE;
       break;
       case FLASH_READ:
-        flashInfo->status=readFlash(tlvPacket);
-        if(flashInfo->status==INTERPRETE_COMPLETE){
+        flashInfo->obj->tlv=tlvPacket;
+        flashInfo->status=readFlash(flashInfo->obj);
+        if(flashInfo->status==PROCESS_COMPLETE){
           flashInfo->state=FLASH_IDLE;
-          flashInfo->status=INTERPRETE_READY;
+          flashInfo->status=PROCESS_READY;
         }
       break;
       case FLASH_PROGRAM:
@@ -40,11 +41,44 @@ void tlvInterpreter(FlashInfo *flashInfo){
   }
 }
 
-Status readFlash(TlvPacket  *tlvPacket){
-  uint32_t *address=(uint32_t *)(*(uint32_t *)(&tlvPacket->data[0]));
-  uint8_t length=tlvPacket->data[4];
+Status readFlash(FlashObject *obj){
+  int i;
+  switch(obj->state){
+    case READ_IDLE:
+      obj->address=(uint32_t *)(*(uint32_t *)(&obj->tlv->data[0]));
+      obj->length=obj->tlv->data[4];
+      obj->state=READ_DATA;
+    break;
+    
+    case READ_DATA:
+      i=obj->index;
+    
+      obj->tlv->data[5+4*i]=*(obj->address+i)>>0;
+      obj->tlv->data[6+4*i]=*(obj->address+i)>>8;
+      obj->tlv->data[7+4*i]=*(obj->address+i)>>16;
+      obj->tlv->data[8+4*i]=*(obj->address+i)>>24;
+      if(obj->index!=obj->length){
+        obj->index++;
+        return PROCESS_BUSY;
+      }
+      else{
+        return PROCESS_COMPLETE;
+      }
+    break;
+    
+    default   :break;
 
-
-
-  return INTERPRETE_COMPLETE;
+  }
+  
 }
+
+
+
+
+
+
+
+
+
+
+

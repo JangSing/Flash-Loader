@@ -1,12 +1,12 @@
-#ifndef tlv_H
-#define tlv_H
+#ifndef tlvAllocator_H
+#define tlvAllocator_H
 #include "LinkedList.h"
 #include "tlv.h"
 #include <stdint.h>
 
 
 void initTlvAllocator(TlvElement *tlvEle,int noOfTlv);
-TlvPacket *allocateTlv();
+TlvElement *allocateTlv();
 void freeTlv(TlvPacket *packet);
 
 

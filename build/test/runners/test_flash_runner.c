@@ -30,10 +30,8 @@ char* GlobalOrderError;
 //=======External Functions This Runner Calls=====
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_function_tlvReceivedPacket_running_in_correct_state(void);
-extern void test_function_tlvReceivedPacket_passing_in_tlv_info_should_give_correct_result(void);
-extern void test_element_packet_is_pointing_to_tlvInfo_and_it_was_queued_correctly(void);
-extern void test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv(void);
+extern void test_tlvInterpreter_deQueue_tlv_and_interprete_correctly(void);
+extern void test_readFlash(void);
 
 
 //=======Test Reset Option=====
@@ -48,11 +46,9 @@ void resetTest(void)
 //=======MAIN=====
 int main(void)
 {
-  UnityBegin("test_tlv.c");
-  RUN_TEST(test_function_tlvReceivedPacket_running_in_correct_state, 21);
-  RUN_TEST(test_function_tlvReceivedPacket_passing_in_tlv_info_should_give_correct_result, 54);
-  RUN_TEST(test_element_packet_is_pointing_to_tlvInfo_and_it_was_queued_correctly, 81);
-  RUN_TEST(test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv, 109);
+  UnityBegin("test_flash.c");
+  RUN_TEST(test_tlvInterpreter_deQueue_tlv_and_interprete_correctly, 21);
+  RUN_TEST(test_readFlash, 42);
 
   return (UnityEnd());
 }

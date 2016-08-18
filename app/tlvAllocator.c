@@ -18,11 +18,11 @@ void initTlvAllocator(TlvElement *tlvEle,int noOfTlv){
   
 }
 
-TlvPacket *allocateTlv(){
-  TlvElement *allocatedEle;
-  allocatedEle=(TlvElement *)removeLast(&allocatorList);
-  
-  return &(allocatedEle->tlv);
-  
-  
+TlvElement *allocateTlv(){
+  return (TlvElement *)removeLast(&allocatorList);
+}
+
+void freeTlv(TlvPacket *packet){
+  TlvElement freeEle={NULL,*packet};
+  addFirst(&allocatorList,(ListElement *)&freeEle);
 }

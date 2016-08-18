@@ -161,23 +161,6 @@ void test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv(void){
   TEST_ASSERT_NULL(tlvInfo.list.head->next->next->next);
 }
 
-void test_tlvInterpreter_deQueue_tlv_and_interprete_correctly(void)
-{
-  LinkedList list;
-  linkedListInit(&list);
-  
-  TlvPacket  packet[10]={{TYPE_READ,1,1,1},{2,2,2,2,2},{3,3,3,3,3,3}};
-  TlvElement tlvEle[10]={{NULL,packet[0]},{&tlvEle[0],packet[1]},{&tlvEle[1],packet[2]}};
-  list.head=(ListElement *)(&tlvEle[2]);
-  list.tail=(ListElement *)(&tlvEle[0]);
-  
-  FlashInfo flashInfo={FLASH_IDLE,INTERPRETE_READY,NULL,&list};
-  
-  tlvInterpreter(&flashInfo);
-  TEST_ASSERT_EQUAL_PTR(&tlvEle[2], list.head);
-  TEST_ASSERT_EQUAL_PTR(&tlvEle[1], list.head->next);
-  TEST_ASSERT_NULL( list.head->next->next);
-  
-  TEST_ASSERT_EQUAL(FLASH_READ,flashInfo.state);
-}
+
+
 

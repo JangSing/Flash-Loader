@@ -9,80 +9,90 @@
 #include "usbd_cdc_vcp.h"
 #include "usb_dcd_int.h"
 
-void tlvReceivedPacket( TlvInfo *tlvInfo,
-                        TlvElement *tlvEle){
-                          
-  uint8_t byteReceived;
-  if(VCP_get_char(&byteReceived)){
+void tlvReceivePacket( TlvInfo *tlvInfo){
+
+  uint8_t byteReceive;
+  TlvElement *tlvEle;
+  if(VCP_get_char(&byteReceive)){
     switch(tlvInfo->state){
-      case TLV_IDLE :
-        tlvInfo->ptr->type1=byteReceived;
-        tlvInfo->state=TYPE1_RECEIVED;
+      case IDLE_RECEIVE :
+        tlvInfo->ptr->type1=byteReceive;
+        tlvInfo->state=TYPE1_RECEIVE;
       break;
-      case TYPE1_RECEIVED:
-        tlvInfo->ptr->type2=byteReceived;
-        tlvInfo->state=TYPE2_RECEIVED;
+      case TYPE1_RECEIVE:
+        tlvInfo->ptr->type2=byteReceive;
+        tlvInfo->state=TYPE2_RECEIVE;
       break;
-      case TYPE2_RECEIVED:
-        tlvInfo->ptr->length=byteReceived;
-        tlvInfo->state=LENGTH_RECEIVED;
+      case TYPE2_RECEIVE:
+        tlvInfo->ptr->length=byteReceive;
+        tlvInfo->state=LENGTH_RECEIVE;
       break;
-      case LENGTH_RECEIVED:
-        tlvInfo->ptr->data[tlvInfo->index]=byteReceived;
+      case LENGTH_RECEIVE:
+        tlvInfo->ptr->data[tlvInfo->index]=byteReceive;
 
         (tlvInfo->index)++;
         if(tlvInfo->index != tlvInfo->ptr->length)
-          tlvInfo->state=LENGTH_RECEIVED;
+          tlvInfo->state=LENGTH_RECEIVE;
         else
-          tlvInfo->state=VALUE_RECEIVED;
+          tlvInfo->state=VALUE_RECEIVE;
       break;
-      case VALUE_RECEIVED:
+      case VALUE_RECEIVE:
+        //formation of the tlv packet
         tlvInfo->index=0;
-
-        tlvEle[tlvInfo->list.length].tlv=*(tlvInfo->ptr);
-        addFirst(&tlvInfo->list, (ListElement *)(&tlvEle[tlvInfo->list.length]));
-        tlvInfo->state=TLV_IDLE;
+        tlvEle=(TlvElement *)(allocateTlv());
+        tlvEle->tlv=*(tlvInfo->ptr);
+        addFirst(tlvInfo->list, (ListElement *)(tlvEle));
+        tlvInfo->state=IDLE_RECEIVE;
       break;
       default   :break;
     }
   }
 }
 
-// void tlvReceivedPacket( TlvInfo *tlvInfo,
-                        // TlvElement *tlvEle){
-                          
-  // uint8_t byteReceived;
-  // if(VCP_get_char(&byteReceived)){
-    // switch(tlvInfo->state){
-      // case TLV_IDLE :
-        // tlvInfo->ptr->type1=byteReceived;
-        // tlvInfo->state=TYPE1_RECEIVED;
-      // break;
-      // case TYPE1_RECEIVED:
-        // tlvInfo->ptr->type2=byteReceived;
-        // tlvInfo->state=TYPE2_RECEIVED;
-      // break;
-      // case TYPE2_RECEIVED:
-        // tlvInfo->ptr->length=byteReceived;
-        // tlvInfo->state=LENGTH_RECEIVED;
-      // break;
-      // case LENGTH_RECEIVED:
-        // tlvInfo->ptr->data[tlvInfo->index]=byteReceived;
+void tlvSendPacket(TlvInfo *tlvInfo){
+  TlvElement *deQEle;
+  TlvPacket  *tlvPacket;
+  LinkedList *senderQueue=tlvInfo->list;
+  
+  if(senderQueue->tail!=NULL && tlvInfo->status==PROCESS_READY){
+    deQEle=(TlvElement *)(removeLast(senderQueue));
+    tlvInfo->ptr=&deQEle->tlv;
+  }
+  if(tlvInfo->ptr!=NULL){
+    tlvInfo->status=PROCESS_BUSY;
+    tlvPacket=tlvInfo->ptr;
+    switch(tlvInfo->state){
+      case TYPE1_SEND:
+        VCP_put_char(tlvPacket->type1);
+        tlvInfo->state=TYPE2_SEND;
+      break;
+      case TYPE2_SEND:
+        VCP_put_char(tlvPacket->type2);
+        tlvInfo->state=LENGTH_SEND;
+      break;
+      case LENGTH_SEND:
+        VCP_put_char(tlvPacket->length);
+        tlvInfo->state=VALUE_SEND;
+      break;
+      case VALUE_SEND:
+        VCP_put_char(tlvPacket->data[tlvInfo->index]);
+        tlvInfo->index++;
+        if(tlvInfo->index==tlvPacket->length){
+          tlvInfo->state=TYPE1_SEND;
+          tlvInfo->index=0;
+        }
+      break;
+      default: break;
+    }
+  }
+}
 
-        // (tlvInfo->index)++;
-        // if(tlvInfo->index != tlvInfo->ptr->length)
-          // tlvInfo->state=LENGTH_RECEIVED;
-        // else
-          // tlvInfo->state=VALUE_RECEIVED;
-      // break;
-      // case VALUE_RECEIVED:
-        // tlvInfo->index=0;
-        // tlvEle[tlvInfo->list.length].tlv=*(tlvInfo->ptr);
-        // addFirst(&tlvInfo->list, (ListElement *)(&tlvEle[tlvInfo->list.length]));
-        // tlvInfo->state=TLV_IDLE;
-      // break;
-      // default   :break;
-    // }
-  // }
-// }
+
+
+
+
+
+
+
+
 

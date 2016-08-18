@@ -5,7 +5,13 @@
 
 #define DATA_SIZE 258
 
-typedef enum{TLV_IDLE,TYPE1_RECEIVED,TYPE2_RECEIVED,LENGTH_RECEIVED,VALUE_RECEIVED}TlvState;
+typedef enum{ IDLE_RECEIVE,TYPE1_RECEIVE,TYPE2_RECEIVE,LENGTH_RECEIVE,VALUE_RECEIVE,
+              IDLE_SEND,TYPE1_SEND,TYPE2_SEND,LENGTH_SEND,VALUE_SEND}TlvState;
+
+typedef enum{ PROCESS_COMPLETE,
+              PROCESS_READY,
+              PROCESS_BUSY,
+              PROCESS_ERROR}Status;
 
 typedef struct TlvPacket TlvPacket;
 struct TlvPacket {
@@ -16,11 +22,11 @@ struct TlvPacket {
 };
 
 typedef struct{
-  TlvState  state;
-  int       index;
-  TlvPacket *ptr;
-  LinkedList list;
-
+  Status      status;
+  TlvState    state;
+  int         index;
+  TlvPacket   *ptr;
+  LinkedList  *list;
 }TlvInfo;
 
 typedef struct TlvElement TlvElement;
@@ -29,7 +35,9 @@ struct TlvElement{
   TlvPacket tlv;
 };
 
-void tlvReceivedPacket( TlvInfo *tlvInfo,
-                        TlvElement *tlvEle);
+void tlvReceivePacket( TlvInfo *tlvInfo);
+void tlvSendPacket(TlvInfo *tlvInfo);
+
+
 
 #endif // tlv_H

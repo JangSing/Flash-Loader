@@ -15,14 +15,11 @@
 - :test: test_tlvReceivedPacket_the_tlv_queued_correctly_for_multiple_tlv
   :line: 109
   :message: ''
-- :test: test_tlvInterpreter_deQueue_tlv_and_interprete_correctly
-  :line: 164
-  :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 5
-  :passed: 5
+  :total: 4
+  :passed: 4
   :failed: 0
   :ignored: 0
 :stdout:
