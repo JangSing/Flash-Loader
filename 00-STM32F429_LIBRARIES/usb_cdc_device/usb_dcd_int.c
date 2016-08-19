@@ -115,13 +115,13 @@ static uint32_t DCD_OTG_ISR(USB_OTG_CORE_HANDLE *pdev);
 */
 uint32_t USBD_OTG_EP1OUT_ISR_Handler (USB_OTG_CORE_HANDLE *pdev)
 {
-  
+
   USB_OTG_DOEPINTn_TypeDef  doepint;
-  USB_OTG_DEPXFRSIZ_TypeDef  deptsiz;  
-  
+  USB_OTG_DEPXFRSIZ_TypeDef  deptsiz;
+
   doepint.d32 = USB_OTG_READ_REG32(&pdev->regs.OUTEP_REGS[1]->DOEPINT);
   doepint.d32&= USB_OTG_READ_REG32(&pdev->regs.DREGS->DOUTEP1MSK);
-  
+
   /* Transfer complete */
   if ( doepint.b.xfercompl )
   {
@@ -133,13 +133,13 @@ uint32_t USBD_OTG_EP1OUT_ISR_Handler (USB_OTG_CORE_HANDLE *pdev)
       /*ToDo : handle more than one single MPS size packet */
       pdev->dev.out_ep[1].xfer_count = pdev->dev.out_ep[1].maxpacket - \
         deptsiz.b.xfersize;
-    }    
+    }
     /* Inform upper layer: data ready */
     /* RX COMPLETE */
     USBD_DCD_INT_fops->DataOutStage(pdev , 1);
-    
+
   }
-  
+
   /* Endpoint disable  */
   if ( doepint.b.epdisabled )
   {

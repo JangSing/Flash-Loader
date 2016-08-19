@@ -56,9 +56,9 @@ void tlvSendPacket(TlvInfo *tlvInfo){
   if(tlvInfo->list->tail!=NULL && tlvInfo->status==PROCESS_READY){
     deQEle=(TlvElement *)(removeLast(tlvInfo->list));
     tlvInfo->tlv=&deQEle->tlv;
-  }
-  if(tlvInfo->tlv!=NULL){
     tlvInfo->status=PROCESS_BUSY;
+  }
+  if(tlvInfo->status==PROCESS_BUSY){
     tlvPacket=tlvInfo->tlv;
     switch(tlvInfo->state){
       case TYPE1_SEND:
@@ -78,6 +78,7 @@ void tlvSendPacket(TlvInfo *tlvInfo){
         tlvInfo->index++;
         if(tlvInfo->index==tlvPacket->length){
           tlvInfo->state=TYPE1_SEND;
+          tlvInfo->status=PROCESS_READY;
           tlvInfo->index=0;
         }
       break;

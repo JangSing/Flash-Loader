@@ -18,11 +18,11 @@ int main() {
   const char *comPort = "COM3";
 
   int i=0;
-  
+
   printf("Opening %s\n", comPort);
   HANDLE hSerial = initSerialComm(comPort, 9600);
-  
-  printf("Send a byte...\n");
+
+  printf("Sending Packet...\n");
   write(hSerial,0x10);//type1
   write(hSerial,0x10);//type2
   write(hSerial,5);//length
@@ -34,12 +34,37 @@ int main() {
   write(hSerial,1);
   //data end
   write(hSerial,0);//checksum
-  for(i=0;i<100;i++){
-    size=readFromSerialPort(hSerial, buffer, 1);
-    while(!size){}
-    printf("0x%x\n", *buffer);
+
+  for(i=0;i<16;i++){
+    if(readFromSerialPort(hSerial, buffer, 1)){
+      printf("0x%x\n", *buffer);
+      fflush(stdout);
+
+    }
+
   }
 
+  printf("Sending Packet...\n");
+  write(hSerial,0x10);//type1
+  write(hSerial,0x10);//type2
+  write(hSerial,5);//length
+
+  write(hSerial,0x00);
+  write(hSerial,0x20);
+  write(hSerial,0x09);
+  write(hSerial,0x08);
+  write(hSerial,1);
+
+  write(hSerial,0);//checksum
+
+  for(i=0;i<16;i++){
+    if(readFromSerialPort(hSerial, buffer, 1)){
+      printf("0x%x\n", *buffer);
+      fflush(stdout);
+
+    }
+
+  }
 
   printf("Closing %s\n", comPort);
   closeSerialPort(hSerial);

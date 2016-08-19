@@ -69,13 +69,12 @@ DWORD readFromSerialPort(HANDLE hSerial, uint8_t * buffer, int buffersize) {
 }
 
 DWORD writeToSerialPort(HANDLE hSerial, uint8_t * data, int length) {
-	DWORD dwBytesRead = 0;
-	if(!WriteFile(hSerial, data, length, &dwBytesRead, NULL)){
+	DWORD dwBytesWritten = 0;
+	if(!WriteFile(hSerial, data, length, &dwBytesWritten, NULL)){
     DWORD errId = GetLastError();
     printf("WriteFile Error: %d\n", errId);
-//		printLastError();
 	}
-	return dwBytesRead;
+	return dwBytesWritten;
 }
 
 void closeSerialPort(HANDLE hSerial) {

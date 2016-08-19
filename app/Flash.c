@@ -69,6 +69,7 @@ Status readFlash(FlashObject *obj){
         obj->index++;
       }
       else{
+        obj->index=0;
     	obj->tlv->length+=4*(i+1);
         obj->state=READ_END;
       }
