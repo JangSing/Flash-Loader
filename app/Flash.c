@@ -9,6 +9,8 @@ void tlvInterpreter(FlashInfo *flashInfo){
   TlvElement *deQEle;
   TlvPacket  *tlvPacket;
   
+  if(flashInfo->status==PROCESS_COMPLETE)
+	flashInfo->status=PROCESS_READY;
   if(flashInfo->list->tail!=NULL && flashInfo->status==PROCESS_READY){
     deQEle=(TlvElement *)(removeLast(flashInfo->list));
     flashInfo->tlv=&deQEle->tlv;
@@ -53,19 +55,23 @@ Status readFlash(FlashObject *obj){
       obj->address=(uint32_t *)(*(uint32_t *)(&obj->tlv->data[0]));
       obj->length=obj->tlv->data[4];
       obj->state=READ_DATA;
+      return PROCESS_BUSY;
     break;
     
     case READ_DATA:
       i=obj->index;
-    
+      //reading 32-bit data
       obj->tlv->data[5+4*i]=*(obj->address+i)>>0;
       obj->tlv->data[6+4*i]=*(obj->address+i)>>8;
       obj->tlv->data[7+4*i]=*(obj->address+i)>>16;
       obj->tlv->data[8+4*i]=*(obj->address+i)>>24;
-      if(obj->index!=obj->length)
+      if(obj->index!=obj->length){
         obj->index++;
-      else
+      }
+      else{
+    	obj->tlv->length+=4*(i+1);
         obj->state=READ_END;
+      }
       return PROCESS_BUSY;
     break;
     
@@ -74,7 +80,7 @@ Status readFlash(FlashObject *obj){
       tlvEle->tlv=*(obj->tlv);
       addFirst(obj->list, (ListElement *)(tlvEle));
       obj->state=READ_IDLE;
-      return PROCESS_READY;
+      return PROCESS_COMPLETE;
     break;
     default   :break;
 

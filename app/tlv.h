@@ -25,7 +25,7 @@ typedef struct{
   Status      status;
   TlvState    state;
   int         index;
-  TlvPacket   *ptr;
+  TlvPacket   *tlv;
   LinkedList  *list;
 }TlvInfo;
 

@@ -16,22 +16,22 @@ void tlvReceivePacket( TlvInfo *tlvInfo){
   if(VCP_get_char(&byteReceive)){
     switch(tlvInfo->state){
       case IDLE_RECEIVE :
-        tlvInfo->ptr->type1=byteReceive;
+        tlvInfo->tlv->type1=byteReceive;
         tlvInfo->state=TYPE1_RECEIVE;
       break;
       case TYPE1_RECEIVE:
-        tlvInfo->ptr->type2=byteReceive;
+        tlvInfo->tlv->type2=byteReceive;
         tlvInfo->state=TYPE2_RECEIVE;
       break;
       case TYPE2_RECEIVE:
-        tlvInfo->ptr->length=byteReceive;
+        tlvInfo->tlv->length=byteReceive;
         tlvInfo->state=LENGTH_RECEIVE;
       break;
       case LENGTH_RECEIVE:
-        tlvInfo->ptr->data[tlvInfo->index]=byteReceive;
+        tlvInfo->tlv->data[tlvInfo->index]=byteReceive;
 
         (tlvInfo->index)++;
-        if(tlvInfo->index != tlvInfo->ptr->length)
+        if(tlvInfo->index != tlvInfo->tlv->length)
           tlvInfo->state=LENGTH_RECEIVE;
         else
           tlvInfo->state=VALUE_RECEIVE;
@@ -40,7 +40,7 @@ void tlvReceivePacket( TlvInfo *tlvInfo){
         //formation of the tlv packet
         tlvInfo->index=0;
         tlvEle=(TlvElement *)(allocateTlv());
-        tlvEle->tlv=*(tlvInfo->ptr);
+        tlvEle->tlv=*(tlvInfo->tlv);
         addFirst(tlvInfo->list, (ListElement *)(tlvEle));
         tlvInfo->state=IDLE_RECEIVE;
       break;
@@ -52,15 +52,14 @@ void tlvReceivePacket( TlvInfo *tlvInfo){
 void tlvSendPacket(TlvInfo *tlvInfo){
   TlvElement *deQEle;
   TlvPacket  *tlvPacket;
-  LinkedList *senderQueue=tlvInfo->list;
   
-  if(senderQueue->tail!=NULL && tlvInfo->status==PROCESS_READY){
-    deQEle=(TlvElement *)(removeLast(senderQueue));
-    tlvInfo->ptr=&deQEle->tlv;
+  if(tlvInfo->list->tail!=NULL && tlvInfo->status==PROCESS_READY){
+    deQEle=(TlvElement *)(removeLast(tlvInfo->list));
+    tlvInfo->tlv=&deQEle->tlv;
   }
-  if(tlvInfo->ptr!=NULL){
+  if(tlvInfo->tlv!=NULL){
     tlvInfo->status=PROCESS_BUSY;
-    tlvPacket=tlvInfo->ptr;
+    tlvPacket=tlvInfo->tlv;
     switch(tlvInfo->state){
       case TYPE1_SEND:
         VCP_put_char(tlvPacket->type1);

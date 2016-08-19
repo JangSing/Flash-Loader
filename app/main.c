@@ -38,17 +38,17 @@ int main(void) {
 
   //initialize receive tlv structure
   TlvPacket buffer={};
-  TlvInfo tlvRECEIVEInfo={PROCESS_READY,IDLE_RECEIVE,0,&buffer,&receiverQueue};
+  TlvInfo tlvReceiveInfo={PROCESS_READY,IDLE_RECEIVE,0,&buffer,&receiverQueue};
 
   //initialize flash structure
   FlashObject flashObj={READ_IDLE,NULL,0,0,NULL,&senderQueue};
-  FlashInfo flashInfo={FLASH_IDLE,PROCESS_READY,NULL,tlvRECEIVEInfo.list,&flashObj};
+  FlashInfo flashInfo={FLASH_IDLE,PROCESS_READY,NULL,tlvReceiveInfo.list,&flashObj};
 
   //initialize send tlv structure
   TlvInfo tlvSendingInfo={PROCESS_READY,TYPE1_SEND,0,flashInfo.obj->tlv,&senderQueue};
   
   while(1){
-    tlvReceivePacket(&tlvRECEIVEInfo);
+    tlvReceivePacket(&tlvReceiveInfo);
     tlvInterpreter(&flashInfo);
     tlvSendPacket(&tlvSendingInfo);
   }

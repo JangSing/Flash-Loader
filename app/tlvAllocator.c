@@ -23,6 +23,7 @@ TlvElement *allocateTlv(){
 }
 
 void freeTlv(TlvPacket *packet){
+  packet=NULL;
   TlvElement freeEle={NULL,*packet};
   addFirst(&allocatorList,(ListElement *)&freeEle);
 }

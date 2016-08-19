@@ -4,65 +4,41 @@
 #include <stdlib.h>
 #include "Serial.h"
 
+void write(HANDLE hSerial,uint8_t value){
+  uint8_t inBuff[20];
+  *inBuff=value;
+  writeToSerialPort(hSerial, inBuff, 1);
+}
+
 int main() {
   DWORD size;
-  uint8_t *buffer;
+  uint8_t buffer[20]={};
   uint8_t receiveBuff;
   uint8_t inBuff[20];
   const char *comPort = "COM3";
 
+  int i=0;
   
   printf("Opening %s\n", comPort);
   HANDLE hSerial = initSerialComm(comPort, 9600);
-
-  // while(1){
-    printf("Send a byte...\n");
-    *inBuff=0x10;
-    writeToSerialPort(hSerial, inBuff, 1);
-    size = readFromSerialPort(hSerial, buffer, 32);
-    printf("%.*s\n", size, buffer);
-    // *inBuff=0x10;
-    // writeToSerialPort(hSerial, inBuff, 1);
-    // while(buffer==0){
-      // size = readFromSerialPort(hSerial, buffer, 1);
-      // buffer=0;
-    // }
-    // *inBuff=5;
-    // writeToSerialPort(hSerial, inBuff, 1);
-    // while(buffer==0){
-      // size = readFromSerialPort(hSerial, buffer, 1);
-      // buffer=0;
-    // }
-    // *inBuff=0x00;
-    // writeToSerialPort(hSerial, inBuff, 1);
-    // while(buffer==0){
-      // size = readFromSerialPort(hSerial, buffer, 1);
-      // buffer=0;
-    // }
-    // *inBuff=0x00;
-    // writeToSerialPort(hSerial, inBuff, 1);
-    // while(buffer==0){
-      // size = readFromSerialPort(hSerial, buffer, 1);
-      // buffer=0;
-    // }
-    // *inBuff=0x09;
-    // writeToSerialPort(hSerial, inBuff, 1);
-    // while(buffer==0){
-      // size = readFromSerialPort(hSerial, buffer, 1);
-      // buffer=0;
-    // }
-    // *inBuff=0x08;
-    // writeToSerialPort(hSerial, inBuff, 1);
-    // while(buffer==0){
-      // size = readFromSerialPort(hSerial, buffer, 1);
-      // buffer=0;
-    // }
-    // *inBuff=1;
-    // writeToSerialPort(hSerial, inBuff, 1);
-    
-    // size = readFromSerialPort(hSerial, buffer, 32);
-    // printf("%.*s\n", size, buffer);
-  // }
+  
+  printf("Send a byte...\n");
+  write(hSerial,0x10);//type1
+  write(hSerial,0x10);//type2
+  write(hSerial,5);//length
+  //data start
+  write(hSerial,0x00);
+  write(hSerial,0x00);
+  write(hSerial,0x09);
+  write(hSerial,0x08);
+  write(hSerial,1);
+  //data end
+  write(hSerial,0);//checksum
+  for(i=0;i<100;i++){
+    size=readFromSerialPort(hSerial, buffer, 1);
+    while(!size){}
+    printf("0x%x\n", *buffer);
+  }
 
 
   printf("Closing %s\n", comPort);
