@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <stdlib.h>
+#include "stm32f4xx_flash.h"
 #include "Flash.h"
 #include "tlv.h"
 #include "tlvAllocator.h"
@@ -37,7 +38,10 @@ void tlvInterpreter(FlashInfo *flashInfo){
         }
       break;
       case FLASH_PROGRAM:
-
+        FLASH_Unlock();
+        flashInfo->obj->tlv=tlvPacket;
+        flashInfo->status=programFlash(flashInfo->obj);
+        FLASH_Lock();
       break;
       case FLASH_ERASE:
 
@@ -51,7 +55,7 @@ Status readFlash(FlashObject *obj){
   int i;
   TlvElement *tlvEle;
   switch(obj->state){
-    case READ_IDLE:
+    case OBJ_IDLE:
       obj->address=(uint32_t *)(*(uint32_t *)(&obj->tlv->data[0]));
       obj->length=obj->tlv->data[4];
       obj->state=READ_DATA;
@@ -70,17 +74,17 @@ Status readFlash(FlashObject *obj){
       }
       else{
         obj->index=0;
-    	obj->tlv->length+=4*(i+1);
-        obj->state=READ_END;
+        obj->tlv->length+=4*(i+1);
+        obj->state=OBJ_END;
       }
       return PROCESS_BUSY;
     break;
     
-    case READ_END:
+    case OBJ_END:
       tlvEle=(TlvElement *)(allocateTlv());
       tlvEle->tlv=*(obj->tlv);
       addFirst(obj->list, (ListElement *)(tlvEle));
-      obj->state=READ_IDLE;
+      obj->state=OBJ_IDLE;
       return PROCESS_COMPLETE;
     break;
     default   :break;
@@ -88,3 +92,43 @@ Status readFlash(FlashObject *obj){
   }
   return PROCESS_ERROR;
 }
+
+
+Status programFlash(FlashObject *obj){
+  int i;
+  TlvElement *tlvEle;
+  switch(obj->state){
+    case OBJ_IDLE:
+      obj->address=(uint32_t *)(*(uint32_t *)(&obj->tlv->data[0]));
+      obj->length=obj->tlv->data[4];
+      obj->state=PROGRAM_DATA;
+      return PROCESS_BUSY;
+    break;
+
+    case PROGRAM_DATA:
+      i=obj->index;
+      FLASH_ProgramWord((uint32_t *)(obj->address),0x12345678);
+      if(obj->index!=obj->length){
+        obj->index++;
+      }
+      else{
+        obj->index=0;
+        obj->tlv->length+=4*(i+1);
+        obj->state=OBJ_END;
+      }
+      return PROCESS_BUSY;
+    break;
+
+    case OBJ_END:
+      tlvEle=(TlvElement *)(allocateTlv());
+      tlvEle->tlv=*(obj->tlv);
+      addFirst(obj->list, (ListElement *)(tlvEle));
+      obj->state=OBJ_IDLE;
+      return PROCESS_COMPLETE;
+    break;
+    default   :break;
+
+  }
+  return PROCESS_ERROR;
+}
+

@@ -4,11 +4,9 @@
 
 typedef enum{FLASH_IDLE,FLASH_READ,FLASH_PROGRAM,FLASH_ERASE}FlashState;
 
-typedef enum{READ_IDLE,READ_DATA,READ_END}ObjState;
+typedef enum{ OBJ_IDLE,READ_DATA,
+              PROGRAM_DATA,OBJ_END}ObjState;
 
-
-              
-              
 typedef struct{
   ObjState    state;
   uint32_t    *address;
@@ -17,7 +15,6 @@ typedef struct{
   TlvPacket   *tlv;
   LinkedList  *list;
 }FlashObject;
-
 
 typedef struct{
   FlashState  state;
@@ -33,5 +30,6 @@ typedef struct{
 
 void tlvInterpreter(FlashInfo *flashInfo);
 Status readFlash(FlashObject *obj);
+Status programFlash(FlashObject *obj);
 
 #endif // Flash_H

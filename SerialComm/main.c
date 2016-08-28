@@ -28,42 +28,38 @@ int main() {
   write(hSerial,5);//length
   //data start
   write(hSerial,0x00);
-  write(hSerial,0x00);
-  write(hSerial,0x09);
+  write(hSerial,0x40);
+  write(hSerial,0x10);
   write(hSerial,0x08);
-  write(hSerial,1);
+  write(hSerial,0);
   //data end
   write(hSerial,0);//checksum
 
-  for(i=0;i<16;i++){
+  for(i=0;i<12;i++){
     if(readFromSerialPort(hSerial, buffer, 1)){
       printf("0x%x\n", *buffer);
       fflush(stdout);
-
     }
-
   }
 
   printf("Sending Packet...\n");
   write(hSerial,0x10);//type1
   write(hSerial,0x10);//type2
   write(hSerial,5);//length
-
+  //data start
   write(hSerial,0x00);
-  write(hSerial,0x20);
-  write(hSerial,0x09);
+  write(hSerial,0x40);
+  write(hSerial,0x10);
   write(hSerial,0x08);
-  write(hSerial,1);
-
+  write(hSerial,0);
+  //data end
   write(hSerial,0);//checksum
 
-  for(i=0;i<16;i++){
+  for(i=0;i<12;i++){
     if(readFromSerialPort(hSerial, buffer, 1)){
       printf("0x%x\n", *buffer);
       fflush(stdout);
-
     }
-
   }
 
   printf("Closing %s\n", comPort);

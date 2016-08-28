@@ -41,7 +41,7 @@ int main(void) {
   TlvInfo tlvReceiveInfo={PROCESS_READY,IDLE_RECEIVE,0,&buffer,&receiverQueue};
 
   //initialize flash structure
-  FlashObject flashObj={READ_IDLE,NULL,0,0,NULL,&senderQueue};
+  FlashObject flashObj={OBJ_IDLE,NULL,0,0,NULL,&senderQueue};
   FlashInfo flashInfo={FLASH_IDLE,PROCESS_READY,NULL,tlvReceiveInfo.list,&flashObj};
 
   //initialize send tlv structure

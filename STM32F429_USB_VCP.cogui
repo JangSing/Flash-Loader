@@ -20,10 +20,10 @@
 <part id="1"/>
 <part id="3"/>
 <part id="4"/>
-<part id="2"/>
 <part id="5"/>
 <part id="6"/>
 <part id="7"/>
+<part id="2"/>
 <part id="8"/>
 <part id="9"/>
 <part id="10"/>
@@ -31,6 +31,7 @@
 <part id="12"/>
 <part id="13"/>
 <part id="14"/>
+<part id="15"/>
 </presentation>
 </folder>
 </info>
@@ -45,7 +46,7 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Flash.h" partName="Flash.h" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/Flash.h" title="Flash.h" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/Flash.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/Flash.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="615" selectionTopPixel="163"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="605" selectionTopPixel="243"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="tlv.h" partName="tlv.h" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/tlv.h" title="tlv.h" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/tlv.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/tlv.h"/>
@@ -55,21 +56,17 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/stm32f4xx_it.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="641"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/main.c" title="main.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/main.c" title="main.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1176" selectionTopPixel="563"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="392" selectionTopPixel="510"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="tlv.c" partName="tlv.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/tlv.c" title="tlv.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/tlv.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/tlv.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2431" selectionTopPixel="1440"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2431" selectionTopPixel="1393"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="tlvAllocator.c" partName="tlvAllocator.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/tlvAllocator.c" title="tlvAllocator.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/tlvAllocator.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/tlvAllocator.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="19" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Flash.c" partName="Flash.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/Flash.c" title="Flash.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/Flash.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/Flash.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1303" selectionTopPixel="780"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="usb_dcd_int.c" partName="usb_dcd_int.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/00-STM32F429_LIBRARIES/usb_cdc_device/usb_dcd_int.c" title="usb_dcd_int.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/00-STM32F429_LIBRARIES/usb_cdc_device/usb_dcd_int.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/usb_config/usb_dcd_int.c"/>
@@ -95,6 +92,14 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/usb_config/usb_conf.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="41" selectionOffset="7151" selectionTopPixel="3180"/>
 </editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_flash.c" partName="stm32f4xx_flash.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c" title="stm32f4xx_flash.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/Config/stm32f4xx_flash.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="20093" selectionTopPixel="9920"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Flash.c" partName="Flash.c" path="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/Flash.c" title="Flash.c" tooltip="C:/College_Stuff/Degree_yr3_sem1/Agile/Flash-Loader/app/Flash.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F429_USB_VCP/App/Flash.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3001" selectionTopPixel="2043"/>
+</editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
@@ -102,9 +107,11 @@
 <expanded>
 <element path="/STM32F429_USB_VCP"/>
 <element path="/STM32F429_USB_VCP/App"/>
+<element path="/STM32F429_USB_VCP/Config"/>
+<element path="/STM32F429_USB_VCP/Core"/>
 </expanded>
 <selection>
-<element path="/STM32F429_USB_VCP"/>
+<element path="/STM32F429_USB_VCP/App/Flash.c"/>
 </selection>
 </viewState>
 </view>
@@ -159,8 +166,8 @@
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryBrowserAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showVariablesAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.openProjectExplorerAction"/>
-<hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
+<hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showRegistersAction"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
@@ -197,7 +204,7 @@
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.13567312" ratioLeft="259" ratioRight="1650" relationship="2" relative="org.eclipse.ui.internal.ViewStack@b780ce"/>
+<info part="org.eclipse.ui.editorss" ratio="0.16815086" ratioLeft="321" ratioRight="1588" relationship="2" relative="org.eclipse.ui.internal.ViewStack@b780ce"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1697bbb" ratio="0.71879286" ratioLeft="524" ratioRight="205" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
@@ -252,8 +259,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
+<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.coocox.codebugger.trace.ui.traceview"/>
@@ -325,165 +332,160 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/App/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/usb_config/usb_bsp.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/usb_config/usb_dcd_int.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/usb_config/usbd_cdc_vcp.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/usb_config/usb_conf.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/usb_config/usbd_cdc_core.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/App/tlvAllocator.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/App/Flash.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/App/tlv.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/usb_config/usbd_cdc_vcp.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/Config/stm32f4xx_flash.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F429_USB_VCP/App/Flash.h"/>
 </editors>
-<item historyLabel="usb_dcd_int.c" index="2">
-<position info="not_deleted" x="2938" y="0"/>
+<item historyLabel="Flash.c" index="1">
+<position/>
 </item>
-<item historyLabel="usb_conf.h" index="4">
-<position info="not_deleted" x="7228" y="0"/>
+<item historyLabel="Flash.c" index="1">
+<position/>
 </item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7833" y="0"/>
-</item>
-<item historyLabel="usbd_cdc_vcp.c" index="3">
-<position info="not_deleted" x="6592" y="0"/>
-</item>
-<item historyLabel="usb_dcd_int.c" index="2">
-<position info="not_deleted" x="3581" y="0"/>
-</item>
-<item historyLabel="usbd_cdc_core.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="usbd_cdc_vcp.c" index="3">
-<position info="not_deleted" x="6326" y="0"/>
-</item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7701" y="44"/>
-</item>
-<item historyLabel="usb_conf.h" index="4">
-<position info="not_deleted" x="7151" y="41"/>
-</item>
-<item historyLabel="Flash.c" index="7">
-<position info="not_deleted" x="1303" y="0"/>
-</item>
-<item historyLabel="usb_dcd_int.c" index="2">
-<position info="not_deleted" x="3121" y="0"/>
-</item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7449" y="0"/>
-</item>
-<item historyLabel="usb_dcd_int.c" index="2">
-<position info="not_deleted" x="3116" y="0"/>
-</item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7451" y="0"/>
-</item>
-<item historyLabel="usb_dcd_int.c" index="2">
-<position info="not_deleted" x="3107" y="27"/>
-</item>
-<item historyLabel="Flash.c" index="7">
-<position info="not_deleted" x="1915" y="0"/>
-</item>
-<item historyLabel="tlv.c" index="8">
-<position info="not_deleted" x="1805" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="436" y="0"/>
-</item>
-<item historyLabel="tlvAllocator.c" index="6">
-<position info="not_deleted" x="19" y="0"/>
-</item>
-<item historyLabel="Flash.c" index="7">
-<position info="not_deleted" x="1915" y="0"/>
-</item>
-<item historyLabel="usb_dcd_int.c" index="2">
-<position info="not_deleted" x="3963" y="0"/>
-</item>
-<item historyLabel="usbd_cdc_core.c" index="5">
-<position info="not_deleted" x="7427" y="0"/>
-</item>
-<item historyLabel="usbd_cdc_vcp.c" index="3">
-<position info="not_deleted" x="6326" y="0"/>
-</item>
-<item historyLabel="usbd_cdc_vcp.c" index="3">
-<position info="not_deleted" x="6433" y="0"/>
-</item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7451" y="0"/>
-</item>
-<item historyLabel="usb_conf.h" index="4">
-<position info="not_deleted" x="7151" y="41"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="601" y="0"/>
-</item>
-<item historyLabel="tlv.c" index="8">
-<position info="not_deleted" x="1805" y="0"/>
-</item>
-<item historyLabel="Flash.c" index="7">
-<position info="not_deleted" x="1915" y="0"/>
-</item>
-<item historyLabel="tlv.c" index="8">
-<position info="not_deleted" x="1805" y="0"/>
-</item>
-<item historyLabel="tlv.c" index="8">
-<position info="not_deleted" x="2298" y="0"/>
+<item historyLabel="Flash.c" index="1">
+<position/>
 </item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="392" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1300" y="0"/>
+<item historyLabel="Flash.c" index="1">
+<position/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="392" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="526" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="392" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="640" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1356" y="0"/>
-</item>
-<item historyLabel="usbd_cdc_vcp.c" index="9">
-<position info="not_deleted" x="6359" y="0"/>
-</item>
-<item historyLabel="Flash.c" index="7">
-<position info="not_deleted" x="286" y="0"/>
-</item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7587" y="0"/>
-</item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7619" y="0"/>
-</item>
-<item historyLabel="usb_bsp.c" index="1">
-<position info="not_deleted" x="7657" y="0"/>
-</item>
-<item historyLabel="Flash.c" index="7">
-<position info="not_deleted" x="454" y="0"/>
-</item>
-<item historyLabel="Flash.c" index="7">
-<position info="not_deleted" x="1303" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1356" y="0"/>
-</item>
-<item historyLabel="tlv.c" index="8">
-<position info="not_deleted" x="1468" y="0"/>
-</item>
-<item historyLabel="tlv.c" index="8">
-<position info="not_deleted" x="1663" y="0"/>
-</item>
-<item historyLabel="tlv.c" index="8">
+<item historyLabel="tlv.c" index="2">
 <position info="not_deleted" x="2431" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="0">
-<position info="not_deleted" x="1393" y="0"/>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="392" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="3588" y="30"/>
+</item>
+<item historyLabel="tlv.c" index="2">
+<position info="not_deleted" x="2431" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="12988" y="18"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="13287" y="16"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="392" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="392" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="20075" y="50"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="Flash.h" index="4">
+<position info="not_deleted" x="736" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="Flash.h" index="4">
+<position info="not_deleted" x="736" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="Flash.h" index="4">
+<position info="not_deleted" x="736" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="392" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="1642" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="20075" y="17"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="392" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="20062" y="65"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="1319" y="0"/>
+</item>
+<item historyLabel="Flash.h" index="4">
+<position info="not_deleted" x="605" y="0"/>
+</item>
+<item historyLabel="tlv.c" index="2">
+<position info="not_deleted" x="2431" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="3123" y="0"/>
+</item>
+<item historyLabel="tlv.c" index="2">
+<position info="not_deleted" x="2431" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="3468" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="2921" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="12988" y="18"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="2921" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="1382" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="2922" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_flash.c" index="3">
+<position info="not_deleted" x="20093" y="8"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="2922" y="0"/>
+</item>
+<item historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="2902" y="65"/>
+</item>
+<item active="true" historyLabel="Flash.c" index="1">
+<position info="not_deleted" x="42" y="30"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -492,6 +494,17 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Flash.c" tooltip="STM32F429_USB_VCP/App/Flash.c">
+<persistable path="/STM32F429_USB_VCP/App/Flash.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_flash.c" tooltip="STM32F429_USB_VCP/Config/stm32f4xx_flash.c">
+<persistable path="/STM32F429_USB_VCP/Config/stm32f4xx_flash.c"/>
+</file>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb_conf.h" tooltip="STM32F429_USB_VCP/usb_config/usb_conf.h">
 <persistable path="/STM32F429_USB_VCP/usb_config/usb_conf.h"/>
 </file>
@@ -524,15 +537,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32f429xx.s" tooltip="FLASH/Config/startup_stm32f429xx.s">
 <persistable path="/FLASH/Config/startup_stm32f429xx.s"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Flash.c" tooltip="STM32F429_USB_VCP/App/Flash.c">
-<persistable path="/STM32F429_USB_VCP/App/Flash.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tlvAllocator.c" tooltip="STM32F429_USB_VCP/App/tlvAllocator.c">
-<persistable path="/STM32F429_USB_VCP/App/tlvAllocator.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="STM32F429_USB_VCP/App/main.c">
-<persistable path="/STM32F429_USB_VCP/App/main.c"/>
 </file>
 </mruList>
 </workbench>
